@@ -81,7 +81,7 @@ ARTISTAS = [
         "spotify_id": "43DRDu6nLSeIedZ7T1A616",
         "instagram":  "xandaviao",
         "tiktok":     ["xandaviao"],
-        "base": {"spotify": 7_198_010, "instagram": 10_075_704, "tiktok": 1_100_000},
+        "base": {"spotify": 7_198_010, "instagram": 10_075_850, "tiktok": 1_200_000},
     },
     {
         "nome": "Solange Almeida", "emoji": "☀️", "destaque": False,
@@ -122,7 +122,7 @@ ARTISTAS = [
         "spotify_id": "5kn7l4yaJxtNhj583LmL9L",
         "instagram":  "gabyamarantos",
         "tiktok":     ["gabyamarantos"],
-        "base": {"spotify": 448_607, "instagram": 1_000_000, "tiktok": 295_000},
+        "base": {"spotify": 448_607, "instagram": 1_169_828, "tiktok": 294_900},
     },
     {
         "nome": "Viviane Batidão", "emoji": "🎵", "destaque": False,
@@ -130,7 +130,7 @@ ARTISTAS = [
         "spotify_id": "1p2aDZsmPNSKQynqjXN7Hj",
         "instagram":  "vivianebatidaoficial",
         "tiktok":     ["vivianebatidaooficial"],
-        "base": {"spotify": 388_662, "instagram": 1_000_000, "tiktok": 500_000},
+        "base": {"spotify": 388_662, "instagram": 1_141_871, "tiktok": 464_100},
     },
     {
         "nome": "Zaynara", "emoji": "⭐", "destaque": False,
@@ -138,7 +138,7 @@ ARTISTAS = [
         "spotify_id": "3g5sxvKldw7Kss4e5FPSXb",
         "instagram":  "zaynaraa",
         "tiktok":     ["zaynara"],
-        "base": {"spotify": 175_863, "instagram": 478_000, "tiktok": 304_000},
+        "base": {"spotify": 175_863, "instagram": 477_775, "tiktok": 304_500},
     },
 ]
 

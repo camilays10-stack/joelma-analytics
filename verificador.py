@@ -85,8 +85,8 @@ ARTISTAS = [
             "tiktok":    ["xandaviao"],
         },
         "base": {
-            "spotify": 7_198_010, "deezer": 2_320_967,
-            "youtube": 0, "instagram": 10_075_704, "tiktok": 1_100_000,
+            "spotify": 7_198_010, "deezer": 2_321_104,
+            "youtube": 0, "instagram": 10_075_850, "tiktok": 1_200_000,
         },
     },
     {
@@ -156,8 +156,8 @@ ARTISTAS = [
             "tiktok":    ["gabyamarantos"],
         },
         "base": {
-            "spotify": 448_607, "deezer": 179_865,
-            "youtube": 0, "instagram": 1_000_000, "tiktok": 295_000,
+            "spotify": 448_607, "deezer": 179_870,
+            "youtube": 0, "instagram": 1_169_828, "tiktok": 294_900,
         },
     },
     {
@@ -170,8 +170,8 @@ ARTISTAS = [
             "tiktok":    ["vivianebatidaooficial"],
         },
         "base": {
-            "spotify": 388_662, "deezer": 24_990,
-            "youtube": 0, "instagram": 1_000_000, "tiktok": 500_000,
+            "spotify": 388_662, "deezer": 24_994,
+            "youtube": 0, "instagram": 1_141_871, "tiktok": 464_100,
         },
     },
     {
@@ -184,8 +184,8 @@ ARTISTAS = [
             "tiktok":    ["zaynara"],
         },
         "base": {
-            "spotify": 175_863, "deezer": 2_897,
-            "youtube": 0, "instagram": 478_000, "tiktok": 304_000,
+            "spotify": 175_863, "deezer": 2_898,
+            "youtube": 0, "instagram": 477_775, "tiktok": 304_500,
         },
     },
 ]
