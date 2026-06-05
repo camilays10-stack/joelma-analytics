@@ -383,6 +383,7 @@ DEFAULT_ARTISTS = {
         "top_hit": "Aquele Alguém feat. Joelma",
         "dados_verificados": True,
     },
+
 }
 
 # ── Carregar / salvar dados ───────────────────────────────
@@ -455,7 +456,12 @@ with st.sidebar:
     selecionados = st.multiselect(
         "Artistas:",
         options=todos,
-        default=[a for a in ["Joelma","Wesley Safadão","Simone Mendes","Xand Avião","Solange Almeida"] if a in todos],
+        default=[a for a in [
+            "Joelma",
+            "Manu Bahtidão","Fafá de Belém","Gaby Amarantos","Viviane Batidão","Zaynara",
+            "Ana Castela","João Gomes",
+            "Wesley Safadão","Simone Mendes","Xand Avião",
+        ] if a in todos],
         help="Joelma é sempre incluída automaticamente"
     )
     if "Joelma" not in selecionados and "Joelma" in data:
