@@ -544,6 +544,48 @@ with st.sidebar:
                 st.rerun()
 
     st.markdown("---")
+    if st.button("⬇️ Exportar CSV", use_container_width=True):
+        rows_exp = []
+        for nome, art in data.items():
+            m_ = calc_metrics(art)
+            rows_exp.append({
+                "Artista": nome,
+                "Grupo": art.get("grupo","—"),
+                "Gênero": art.get("genero","—"),
+                "Estado": art.get("estado","—"),
+                "IG Seguidores": art["instagram"]["seguidores"],
+                "IG Média Curtidas": art["instagram"]["media_curtidas"],
+                "IG Média Comentários": art["instagram"]["media_comentarios"],
+                "IG Média Views Reels": art["instagram"]["media_views_reels"],
+                "IG ER (%)": m_["er_instagram"],
+                "TK Seguidores": art["tiktok"]["seguidores"],
+                "TK Média Views": art["tiktok"]["media_views"],
+                "TK ER (%)": m_["er_tiktok"],
+                "YT Inscritos": art["youtube"]["inscritos"],
+                "YT Views Total": art["youtube"]["views_total"],
+                "YT Média Views/Vídeo": art["youtube"]["media_views_video"],
+                "SP Ouvintes Mensais": art["spotify"]["ouvintes_mensais"],
+                "SP Seguidores": art["spotify"]["seguidores"],
+                "SP Popularidade": art["spotify"]["popularidade"],
+                "Deezer Fans": art.get("deezer",{}).get("fans",0),
+                "Apple Music Mensais": art.get("apple_music",{}).get("ouvintes_mensais",0),
+                "YT Music Streams": art.get("youtube_music",{}).get("streams_mensais",0),
+                "Amazon Streams": art.get("amazon_music",{}).get("streams_mensais",0),
+                "SoundCloud Plays": art.get("soundcloud",{}).get("plays",0),
+                "Shows 2026": art.get("shows_2026",0),
+                "Score Digital": m_["score_digital"],
+                "Verificado": "Sim" if art.get("dados_verificados") else "Estimado",
+            })
+        csv_str = pd.DataFrame(rows_exp).to_csv(index=False, sep=";").encode("utf-8")
+        st.download_button(
+            "📥 Baixar joelma_analytics.csv",
+            data=csv_str,
+            file_name="joelma_analytics.csv",
+            mime="text/csv",
+            use_container_width=True,
+        )
+
+    st.markdown("---")
     st.caption(f"Dados verificados · Jun/2026\nJoelma Analytics v2.0")
 
 # ═════════════════════════════════════════════════════════
@@ -588,13 +630,15 @@ for col, val, lbl, ico in cards:
 # ═════════════════════════════════════════════════════════
 # TABS
 # ═════════════════════════════════════════════════════════
-tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
+tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8 = st.tabs([
     "📊 Comparativo Geral",
     "📸 Instagram",
     "🎵 TikTok",
     "▶️ YouTube",
     "🎧 Streaming",
     "🧠 Análise Estratégica",
+    "🏆 Rankings",
+    "👤 Perfil do Artista",
 ])
 
 # ─────────────────────────────────────────────────────────
@@ -1187,6 +1231,311 @@ with tab6:
          "Meta": "Marketing cultural de longo prazo + geração Z"},
     ]
     st.dataframe(pd.DataFrame(acoes).set_index("Prioridade"), use_container_width=True)
+
+# ─────────────────────────────────────────────────────────
+# TAB 7 — RANKINGS
+# ─────────────────────────────────────────────────────────
+with tab7:
+    st.markdown("### 🏆 Rankings — Top Artistas por Métrica")
+    st.caption("Baseado nos artistas selecionados no filtro lateral")
+
+    MEDAL = {0: "🥇", 1: "🥈", 2: "🥉"}
+
+    def ranking_block(title, getter, formatter=fmt):
+        st.markdown(f"#### {title}")
+        items = [(nome, getter(art)) for nome, art in artistas_sel.items()]
+        items.sort(key=lambda x: x[1], reverse=True)
+        cols_r = st.columns(min(len(items), 5))
+        for i, (nome, val) in enumerate(items[:5]):
+            medal = MEDAL.get(i, f"#{i+1}")
+            cor_art = cores.get(nome, "#888")
+            cols_r[i].markdown(f"""
+            <div style="background:#1C2128;border-radius:10px;padding:14px;
+                        border-top:4px solid {cor_art};text-align:center">
+                <div style="font-size:1.6rem">{medal}</div>
+                <div style="font-weight:700;color:{cor_art};font-size:.95rem;
+                            white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{nome}</div>
+                <div style="font-size:1.25rem;font-weight:800;color:white;margin-top:4px">
+                    {formatter(val)}</div>
+            </div>
+            """, unsafe_allow_html=True)
+
+    col_rk1, col_rk2 = st.columns(2)
+    with col_rk1:
+        ranking_block("📸 Instagram — Seguidores",
+                      lambda a: a["instagram"]["seguidores"])
+    with col_rk2:
+        ranking_block("💬 Instagram — Engajamento (%)",
+                      lambda a: round((a["instagram"]["media_curtidas"] + a["instagram"]["media_comentarios"])
+                                      / a["instagram"]["seguidores"] * 100, 2) if a["instagram"]["seguidores"] else 0,
+                      formatter=lambda x: f"{x:.2f}%")
+
+    st.markdown("---")
+    col_rk3, col_rk4 = st.columns(2)
+    with col_rk3:
+        ranking_block("🎵 TikTok — Seguidores",
+                      lambda a: a["tiktok"]["seguidores"])
+    with col_rk4:
+        ranking_block("👁️ TikTok — Média de Views",
+                      lambda a: a["tiktok"]["media_views"])
+
+    st.markdown("---")
+    col_rk5, col_rk6 = st.columns(2)
+    with col_rk5:
+        ranking_block("▶️ YouTube — Inscritos",
+                      lambda a: a["youtube"]["inscritos"])
+    with col_rk6:
+        ranking_block("▶️ YouTube — Views Totais",
+                      lambda a: a["youtube"]["views_total"])
+
+    st.markdown("---")
+    col_rk7, col_rk8 = st.columns(2)
+    with col_rk7:
+        ranking_block("🎧 Spotify — Ouvintes Mensais",
+                      lambda a: a["spotify"]["ouvintes_mensais"])
+    with col_rk8:
+        ranking_block("🌐 Score Digital Geral",
+                      lambda a: calc_metrics(a)["score_digital"],
+                      formatter=lambda x: f"{x:.1f}")
+
+    st.markdown("---")
+    col_rk9, col_rk10 = st.columns(2)
+    with col_rk9:
+        ranking_block("🎪 Shows em 2026",
+                      lambda a: a.get("shows_2026", 0))
+    with col_rk10:
+        ranking_block("☁️ SoundCloud — Total de Plays",
+                      lambda a: a.get("soundcloud", {}).get("plays", 0))
+
+    # Tabela de posições consolidada
+    st.markdown("---")
+    st.markdown("#### 📋 Tabela de Posições — Resumo Consolidado")
+    pos_rows = []
+    metricas_rank = {
+        "IG Seg.":    lambda a: a["instagram"]["seguidores"],
+        "IG ER":      lambda a: (a["instagram"]["media_curtidas"]+a["instagram"]["media_comentarios"])
+                                / a["instagram"]["seguidores"] * 100 if a["instagram"]["seguidores"] else 0,
+        "TK Seg.":    lambda a: a["tiktok"]["seguidores"],
+        "TK Views":   lambda a: a["tiktok"]["media_views"],
+        "YT Inscr.":  lambda a: a["youtube"]["inscritos"],
+        "SP Ouv.":    lambda a: a["spotify"]["ouvintes_mensais"],
+        "Score":      lambda a: calc_metrics(a)["score_digital"],
+        "Shows":      lambda a: a.get("shows_2026",0),
+    }
+    rankings_por_metrica = {}
+    for met, fn in metricas_rank.items():
+        ordered = sorted(artistas_sel.keys(), key=lambda n: fn(artistas_sel[n]), reverse=True)
+        for pos, nome in enumerate(ordered, start=1):
+            rankings_por_metrica.setdefault(nome, {})[met] = pos
+
+    for nome in artistas_sel:
+        row = {"Artista": nome}
+        row.update(rankings_por_metrica.get(nome, {}))
+        vals = [v for v in rankings_por_metrica.get(nome, {}).values()]
+        row["Posição Média"] = round(sum(vals)/len(vals), 1) if vals else 0
+        pos_rows.append(row)
+
+    df_pos = pd.DataFrame(pos_rows).sort_values("Posição Média")
+    df_pos = df_pos.set_index("Artista")
+    st.dataframe(df_pos.style.background_gradient(
+        subset=list(metricas_rank.keys()) + ["Posição Média"],
+        cmap="RdYlGn_r",
+    ), use_container_width=True)
+    st.caption("Menor número = melhor posição. Posição Média considera todas as 8 métricas.")
+
+# ─────────────────────────────────────────────────────────
+# TAB 8 — PERFIL DO ARTISTA
+# ─────────────────────────────────────────────────────────
+with tab8:
+    st.markdown("### 👤 Perfil Individual do Artista")
+
+    artista_perfil = st.selectbox(
+        "Escolha o artista para ver o perfil completo:",
+        options=list(artistas_sel.keys()),
+        index=0,
+    )
+
+    if artista_perfil and artista_perfil in artistas_sel:
+        ap = artistas_sel[artista_perfil]
+        mp = calc_metrics(ap)
+        cor_p = ap["cor"]
+        verified_badge = '<span class="badge-verified">✓ Verificado</span>' if ap.get("dados_verificados") else '<span class="badge-est">~ Estimado</span>'
+
+        st.markdown(f"""
+        <div style="background:#1C2128;border-radius:16px;padding:24px;
+                    border-left:6px solid {cor_p};margin-bottom:20px">
+            <h2 style="color:{cor_p};margin:0">{artista_perfil} {verified_badge}</h2>
+            <p style="color:#8B949E;margin:6px 0 0 0">
+                {ap.get('genero','—')} &nbsp;·&nbsp; {ap.get('estado','—')} &nbsp;·&nbsp;
+                {ap.get('grupo','—')}
+            </p>
+            <p style="color:#E67E22;margin:8px 0 0 0">
+                🎵 Top hit: {ap.get('top_hit','—')}
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+
+        # KPIs principais
+        st.markdown("#### 📊 KPIs Principais")
+        pk1, pk2, pk3, pk4, pk5, pk6 = st.columns(6)
+        kpi_data = [
+            (pk1, "📸 Instagram", fmt(ap["instagram"]["seguidores"]), "seguidores"),
+            (pk2, "🎵 TikTok",    fmt(ap["tiktok"]["seguidores"]),    "seguidores"),
+            (pk3, "▶️ YouTube",   fmt(ap["youtube"]["inscritos"]),     "inscritos"),
+            (pk4, "🎧 Spotify",   fmt(ap["spotify"]["ouvintes_mensais"]), "ouv/mês"),
+            (pk5, "💬 ER Insta",  f"{mp['er_instagram']:.2f}%",       "engajamento"),
+            (pk6, "🎪 Shows",     str(ap.get("shows_2026",0)),         "em 2026"),
+        ]
+        for col, plat, val, sub in kpi_data:
+            col.markdown(f"""
+            <div style="background:#161B22;border-radius:10px;padding:14px;
+                        border-top:3px solid {cor_p};text-align:center">
+                <div style="font-size:.75rem;color:#8B949E">{plat}</div>
+                <div style="font-size:1.4rem;font-weight:800;color:{cor_p}">{val}</div>
+                <div style="font-size:.7rem;color:#555">{sub}</div>
+            </div>
+            """, unsafe_allow_html=True)
+
+        st.markdown("---")
+
+        # Gráfico radar do artista
+        col_rad, col_tab = st.columns([1, 1])
+        with col_rad:
+            st.markdown("#### 🕸️ Perfil em Radar")
+            # Normaliza em relação ao máximo entre todos os artistas selecionados
+            def norm_max(getter):
+                vals_all = [getter(a) for a in artistas_sel.values()]
+                mx = max(vals_all) if vals_all else 1
+                return round(getter(ap) / mx * 100, 1) if mx else 0
+
+            radar_vals = [
+                norm_max(lambda a: a["instagram"]["seguidores"]),
+                norm_max(lambda a: a["tiktok"]["seguidores"]),
+                norm_max(lambda a: a["youtube"]["inscritos"]),
+                norm_max(lambda a: a["spotify"]["ouvintes_mensais"]),
+                norm_max(lambda a: a.get("soundcloud",{}).get("plays",0)),
+                norm_max(lambda a: a.get("shows_2026",0)),
+            ]
+            cats_rad = ["Instagram","TikTok","YouTube","Spotify","SoundCloud","Shows"]
+            radar_vals_c = radar_vals + [radar_vals[0]]
+            cats_rad_c   = cats_rad   + [cats_rad[0]]
+
+            fig_pr = go.Figure()
+            fig_pr.add_trace(go.Scatterpolar(
+                r=radar_vals_c, theta=cats_rad_c,
+                fill="toself", name=artista_perfil,
+                line_color=cor_p, fillcolor=cor_p, opacity=0.35,
+            ))
+            fig_pr.update_layout(
+                polar=dict(radialaxis=dict(visible=True, range=[0,100],
+                                           gridcolor="#333", tickfont_color="#666")),
+                paper_bgcolor="#0F1117", font_color="white",
+                height=350, showlegend=False,
+                margin=dict(l=40,r=40,t=40,b=40),
+            )
+            st.plotly_chart(fig_pr, use_container_width=True)
+            st.caption("Valores normalizados em relação ao maior entre os artistas selecionados (100 = líder)")
+
+        with col_tab:
+            st.markdown("#### 📋 Dados Completos")
+
+            plataformas_detail = {
+                "📸 Instagram": {
+                    "Seguidores":     ap["instagram"]["seguidores"],
+                    "Posts":          ap["instagram"].get("posts", 0),
+                    "Média Curtidas": ap["instagram"]["media_curtidas"],
+                    "Média Coment.":  ap["instagram"]["media_comentarios"],
+                    "Média Views Reels": ap["instagram"]["media_views_reels"],
+                    "Taxa Engaj.":    f"{mp['er_instagram']:.2f}%",
+                },
+                "🎵 TikTok": {
+                    "Seguidores":    ap["tiktok"]["seguidores"],
+                    "Curtidas Total": ap["tiktok"].get("curtidas_total",0),
+                    "Média Views":   ap["tiktok"]["media_views"],
+                    "Média Curtidas": ap["tiktok"]["media_curtidas"],
+                    "Taxa Engaj.":   f"{mp['er_tiktok']:.2f}%",
+                },
+                "▶️ YouTube": {
+                    "Inscritos":     ap["youtube"]["inscritos"],
+                    "Views Total":   ap["youtube"]["views_total"],
+                    "Vídeos":        ap["youtube"].get("videos",0),
+                    "Média Views/Vídeo": ap["youtube"]["media_views_video"],
+                    "Views/Inscrito": fmt(int(mp["views_por_inscrito_yt"])),
+                },
+                "🎧 Spotify": {
+                    "Seguidores":      ap["spotify"]["seguidores"],
+                    "Ouvintes Mensais": ap["spotify"]["ouvintes_mensais"],
+                    "Popularidade":    ap["spotify"]["popularidade"],
+                },
+                "🔴 Deezer": {
+                    "Fans":   ap.get("deezer",{}).get("fans",0),
+                    "Álbuns": ap.get("deezer",{}).get("albuns",0),
+                },
+                "🍎 Apple Music": {
+                    "Ouvintes Mensais": ap.get("apple_music",{}).get("ouvintes_mensais",0),
+                },
+                "🎶 YouTube Music": {
+                    "Streams Mensais": ap.get("youtube_music",{}).get("streams_mensais",0),
+                },
+                "📦 Amazon Music": {
+                    "Streams Mensais": ap.get("amazon_music",{}).get("streams_mensais",0),
+                },
+                "☁️ SoundCloud": {
+                    "Total de Plays":  ap.get("soundcloud",{}).get("plays",0),
+                    "Seguidores":      ap.get("soundcloud",{}).get("seguidores",0),
+                },
+            }
+
+            for plat_nome, plat_data in plataformas_detail.items():
+                with st.expander(plat_nome, expanded=(plat_nome in ["📸 Instagram","🎵 TikTok","▶️ YouTube"])):
+                    rows_plat = []
+                    for k, v in plat_data.items():
+                        display_v = v if isinstance(v, str) else fmt(v)
+                        rows_plat.append({"Métrica": k, "Valor": display_v})
+                    st.dataframe(pd.DataFrame(rows_plat).set_index("Métrica"),
+                                 use_container_width=True, hide_index=False)
+
+        # Posição relativa nos rankings
+        st.markdown("---")
+        st.markdown("#### 🏅 Posição nos Rankings (entre os artistas selecionados)")
+
+        rank_metricas = {
+            "Instagram — Seguidores":     lambda a: a["instagram"]["seguidores"],
+            "Instagram — Engajamento (%)": lambda a: (a["instagram"]["media_curtidas"]+a["instagram"]["media_comentarios"])
+                                                     / a["instagram"]["seguidores"]*100 if a["instagram"]["seguidores"] else 0,
+            "TikTok — Seguidores":        lambda a: a["tiktok"]["seguidores"],
+            "TikTok — Média Views":       lambda a: a["tiktok"]["media_views"],
+            "YouTube — Inscritos":        lambda a: a["youtube"]["inscritos"],
+            "YouTube — Views Totais":     lambda a: a["youtube"]["views_total"],
+            "Spotify — Ouvintes Mensais": lambda a: a["spotify"]["ouvintes_mensais"],
+            "Score Digital":              lambda a: calc_metrics(a)["score_digital"],
+            "Shows 2026":                 lambda a: a.get("shows_2026",0),
+        }
+        rank_pos_rows = []
+        for met_name, fn in rank_metricas.items():
+            ordered = sorted(artistas_sel.keys(), key=lambda n: fn(artistas_sel[n]), reverse=True)
+            pos = ordered.index(artista_perfil) + 1 if artista_perfil in ordered else len(ordered)
+            total = len(ordered)
+            medal_r = MEDAL.get(pos-1, f"#{pos}")
+            valor_atual = fn(ap) if not isinstance(fn(ap), float) or fn(ap) >= 1 else fn(ap)
+            if met_name == "Instagram — Engajamento (%)" or met_name == "Score Digital":
+                val_str = f"{valor_atual:.2f}"
+            else:
+                val_str = fmt(int(valor_atual))
+            rank_pos_rows.append({
+                "Métrica": met_name,
+                "Posição": f"{medal_r} {pos}º de {total}",
+                "Valor": val_str,
+            })
+        st.dataframe(pd.DataFrame(rank_pos_rows).set_index("Métrica"),
+                     use_container_width=True)
+
+        # Agenda 2026
+        agenda_txt = ap.get("cache_shows_2026","")
+        if agenda_txt:
+            st.markdown("---")
+            st.markdown("#### 🗓️ Agenda / Turnê 2026")
+            st.info(f"**{artista_perfil}** — {agenda_txt}")
 
 # ─────────────────────────────────────────────────────────
 # RODAPÉ
