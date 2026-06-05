@@ -5,3 +5,4 @@ artists_data.json
 .env
 venv/
 .venv/
+secrets.toml

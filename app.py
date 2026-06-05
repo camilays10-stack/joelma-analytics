@@ -7,6 +7,12 @@ import json
 import os
 from datetime import datetime
 
+try:
+    from fetcher import fetch_all_parallel, get_spotify_token
+    _FETCHER_OK = True
+except Exception:
+    _FETCHER_OK = False
+
 # ── Config ────────────────────────────────────────────────
 st.set_page_config(
     page_title="Joelma Analytics — Comparativo de Artistas",
@@ -550,6 +556,69 @@ with st.sidebar:
                 st.rerun()
 
     st.markdown("---")
+    # ── Dados ao Vivo ──────────────────────────────────────────
+    st.markdown("---")
+    st.markdown("### ⚡ Dados ao Vivo")
+    st.caption("Busca os números reais de cada perfil agora")
+
+    # Lê credenciais do st.secrets (Streamlit Cloud) ou de inputs
+    _sp_id  = st.secrets.get("spotify", {}).get("client_id",  "") if hasattr(st, "secrets") else ""
+    _sp_sec = st.secrets.get("spotify", {}).get("client_secret", "") if hasattr(st, "secrets") else ""
+    _yt_key = st.secrets.get("youtube", {}).get("api_key", "")      if hasattr(st, "secrets") else ""
+
+    with st.expander("🔑 Credenciais de API", expanded=not (_sp_id or _yt_key)):
+        st.caption("Preencha para ativar Spotify e YouTube. Deezer é sempre grátis.")
+        sp_id  = st.text_input("Spotify Client ID",     value=_sp_id,  type="password", key="sp_id")
+        sp_sec = st.text_input("Spotify Client Secret", value=_sp_sec, type="password", key="sp_sec")
+        yt_key = st.text_input("YouTube API Key",       value=_yt_key, type="password", key="yt_key")
+        st.caption("[Como obter as chaves →](https://developer.spotify.com/dashboard) | [YouTube →](https://console.cloud.google.com)")
+
+    platforms_on = []
+    platforms_on.append("🟢 Deezer (grátis)")
+    if sp_id and sp_sec:
+        platforms_on.append("🟢 Spotify")
+    else:
+        platforms_on.append("🔴 Spotify (sem chave)")
+    if yt_key:
+        platforms_on.append("🟢 YouTube")
+    else:
+        platforms_on.append("🔴 YouTube (sem chave)")
+    st.caption(" · ".join(platforms_on))
+
+    if st.button("🔄 Buscar dados ao vivo", type="primary", use_container_width=True):
+        if not _FETCHER_OK:
+            st.error("fetcher.py não encontrado.")
+        else:
+            config = {"youtube_api_key": yt_key or None}
+            if sp_id and sp_sec:
+                token = get_spotify_token(sp_id, sp_sec)
+                if token:
+                    config["spotify_token"] = token
+                else:
+                    st.warning("⚠️ Credenciais Spotify inválidas")
+
+            prog_bar  = st.progress(0.0, "Iniciando busca paralela…")
+            prog_text = st.empty()
+            _live_buf: dict = {}
+
+            def _on_done(p, name):
+                _live_buf[name] = True
+                prog_bar.progress(p, f"✅ {name} ({int(p*100)}%)")
+
+            live_results = fetch_all_parallel(
+                list(artistas_sel.keys()), config, on_done=_on_done
+            )
+            prog_bar.empty()
+            prog_text.empty()
+            st.session_state["live_data"]      = live_results
+            st.session_state["live_timestamp"] = datetime.now().strftime("%d/%m/%Y %H:%M")
+            st.success("✅ Dados atualizados! Veja a aba 🔴 Ao Vivo")
+            st.rerun()
+
+    if "live_timestamp" in st.session_state:
+        st.caption(f"Última busca: {st.session_state['live_timestamp']}")
+
+    st.markdown("---")
     if st.button("⬇️ Exportar CSV", use_container_width=True):
         rows_exp = []
         for nome, art in data.items():
@@ -636,7 +705,7 @@ for col, val, lbl, ico in cards:
 # ═════════════════════════════════════════════════════════
 # TABS
 # ═════════════════════════════════════════════════════════
-tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8 = st.tabs([
+tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9 = st.tabs([
     "📊 Comparativo Geral",
     "📸 Instagram",
     "🎵 TikTok",
@@ -645,6 +714,7 @@ tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8 = st.tabs([
     "🧠 Análise Estratégica",
     "🏆 Rankings",
     "👤 Perfil do Artista",
+    "🔴 Ao Vivo",
 ])
 
 # ─────────────────────────────────────────────────────────
@@ -1542,6 +1612,211 @@ with tab8:
             st.markdown("---")
             st.markdown("#### 🗓️ Agenda / Turnê 2026")
             st.info(f"**{artista_perfil}** — {agenda_txt}")
+
+# ─────────────────────────────────────────────────────────
+# TAB 9 — AO VIVO
+# ─────────────────────────────────────────────────────────
+with tab9:
+    st.markdown("### 🔴 Dados em Tempo Real — Busca nos Perfis Oficiais")
+
+    live = st.session_state.get("live_data", {})
+    live_ts = st.session_state.get("live_timestamp", None)
+
+    if not live:
+        st.info("⚡ Clique em **🔄 Buscar dados ao vivo** na sidebar para buscar os números reais de cada artista agora.")
+        st.markdown("""
+        **O que é buscado automaticamente:**
+        | Plataforma | Requer chave? | O que busca |
+        |---|---|---|
+        | 🟢 Deezer | Não — 100% grátis | Fans, álbuns |
+        | 🟢 Spotify | Client ID + Secret (grátis) | Seguidores, popularidade |
+        | 🟢 YouTube | Google API Key (grátis) | Inscritos, views totais |
+        | ⚠️ Instagram | Não disponível via API pública | — |
+        | ⚠️ TikTok | Não disponível via API pública | — |
+
+        **Como obter as chaves gratuitas:**
+        - **Spotify:** Acesse [developer.spotify.com/dashboard](https://developer.spotify.com/dashboard) → Create App
+        - **YouTube:** Acesse [console.cloud.google.com](https://console.cloud.google.com) → APIs & Services → YouTube Data API v3
+        """)
+    else:
+        if live_ts:
+            st.caption(f"🕐 Última busca: **{live_ts}** · Workflow paralelo — {len(live)} artistas buscados simultaneamente")
+
+        # ── Resumo por plataforma ──────────────────────────────────────────────
+        plats_found = set()
+        for v in live.values():
+            plats_found.update(v.get("data", {}).keys())
+
+        badges = {
+            "deezer":  ("🟢", "#EF5466", "Deezer"),
+            "spotify": ("🟢", "#1DB954", "Spotify"),
+            "youtube": ("🟢", "#FF0000", "YouTube"),
+        }
+        col_b = st.columns(max(len(plats_found), 1))
+        for i, plat in enumerate(sorted(plats_found)):
+            icon, cor, lbl = badges.get(plat, ("🔵", "#888", plat.title()))
+            col_b[i].markdown(f"""
+            <div style="background:#1C2128;border-radius:8px;padding:10px;
+                        border-left:4px solid {cor};text-align:center">
+                <div style="font-size:1.1rem;font-weight:700;color:{cor}">{icon} {lbl}</div>
+                <div style="color:#8B949E;font-size:.8rem">ao vivo</div>
+            </div>
+            """, unsafe_allow_html=True)
+
+        st.markdown("---")
+
+        # ── Comparativo: dados salvos vs ao vivo ──────────────────────────────
+        st.markdown("#### 📊 Comparativo — Dados Salvos × Ao Vivo")
+
+        cmp_rows = []
+        for nome, art in artistas_sel.items():
+            live_art = live.get(nome, {})
+
+            # Deezer
+            saved_dz  = art.get("deezer", {}).get("fans", 0)
+            live_dz   = live_art.get("data", {}).get("deezer", {}).get("fans")
+            delta_dz  = (live_dz - saved_dz) if live_dz is not None else None
+
+            # Spotify seguidores
+            saved_sp  = art.get("spotify", {}).get("seguidores", 0)
+            live_sp   = live_art.get("data", {}).get("spotify", {}).get("seguidores")
+            delta_sp  = (live_sp - saved_sp) if live_sp is not None else None
+
+            # YouTube inscritos
+            saved_yt  = art.get("youtube", {}).get("inscritos", 0)
+            live_yt   = live_art.get("data", {}).get("youtube", {}).get("inscritos")
+            delta_yt  = (live_yt - saved_yt) if live_yt is not None else None
+
+            def _cell(saved, live_val, delta):
+                if live_val is None:
+                    return f"{fmt(saved)} _(sem dados)_"
+                arrow = ("📈 +" if delta > 0 else ("📉 " if delta < 0 else "➡️ ")) if delta is not None else ""
+                delta_str = f"{fmt(abs(delta))}" if delta else "0"
+                return f"{fmt(live_val)} ({arrow}{delta_str})"
+
+            cmp_rows.append({
+                "Artista":          nome,
+                "Deezer Fans":      _cell(saved_dz, live_dz, delta_dz),
+                "Spotify Seguid.":  _cell(saved_sp, live_sp, delta_sp),
+                "YouTube Inscr.":   _cell(saved_yt, live_yt, delta_yt),
+                "Horário":          live_art.get("timestamp", "—"),
+            })
+
+        df_live = pd.DataFrame(cmp_rows).set_index("Artista")
+        st.dataframe(df_live, use_container_width=True)
+        st.caption("📈 subiu · 📉 caiu · ➡️ igual · _(sem dados)_ = plataforma sem chave configurada")
+
+        st.markdown("---")
+
+        # ── Gráfico ao vivo: Deezer Fans ──────────────────────────────────────
+        if "deezer" in plats_found:
+            st.markdown("#### 🔴 Deezer — Fans ao Vivo vs Salvo")
+            dz_rows = []
+            for nome, art in artistas_sel.items():
+                live_dz = live.get(nome, {}).get("data", {}).get("deezer", {}).get("fans")
+                saved_dz = art.get("deezer", {}).get("fans", 0)
+                if live_dz is not None:
+                    dz_rows.append({"Artista": nome, "Tipo": "🔴 Ao Vivo", "Fans": live_dz})
+                dz_rows.append({"Artista": nome, "Tipo": "📋 Salvo", "Fans": saved_dz})
+            if dz_rows:
+                df_dz = pd.DataFrame(dz_rows)
+                fig_dz = px.bar(df_dz, x="Artista", y="Fans", color="Tipo",
+                                barmode="group", template="plotly_dark",
+                                color_discrete_map={"🔴 Ao Vivo": "#EF5466", "📋 Salvo": "#555"},
+                                text=df_dz["Fans"].apply(fmt))
+                fig_dz.update_layout(paper_bgcolor="#0F1117", plot_bgcolor="#161B22",
+                                     font_color="white", height=380, legend_title="")
+                fig_dz.update_traces(textposition="outside")
+                st.plotly_chart(fig_dz, use_container_width=True)
+
+        # ── Gráfico ao vivo: Spotify Seguidores ───────────────────────────────
+        if "spotify" in plats_found:
+            st.markdown("#### 🟢 Spotify — Seguidores ao Vivo vs Salvo")
+            sp_rows = []
+            for nome, art in artistas_sel.items():
+                live_sp  = live.get(nome, {}).get("data", {}).get("spotify", {}).get("seguidores")
+                saved_sp = art.get("spotify", {}).get("seguidores", 0)
+                if live_sp is not None:
+                    sp_rows.append({"Artista": nome, "Tipo": "🔴 Ao Vivo", "Seguidores": live_sp})
+                sp_rows.append({"Artista": nome, "Tipo": "📋 Salvo", "Seguidores": saved_sp})
+            if sp_rows:
+                df_sp = pd.DataFrame(sp_rows)
+                fig_sp = px.bar(df_sp, x="Artista", y="Seguidores", color="Tipo",
+                                barmode="group", template="plotly_dark",
+                                color_discrete_map={"🔴 Ao Vivo": "#1DB954", "📋 Salvo": "#555"},
+                                text=df_sp["Seguidores"].apply(fmt))
+                fig_sp.update_layout(paper_bgcolor="#0F1117", plot_bgcolor="#161B22",
+                                     font_color="white", height=380, legend_title="")
+                fig_sp.update_traces(textposition="outside")
+                st.plotly_chart(fig_sp, use_container_width=True)
+
+        # ── Gráfico ao vivo: YouTube Inscritos ────────────────────────────────
+        if "youtube" in plats_found:
+            st.markdown("#### 🔺 YouTube — Inscritos ao Vivo vs Salvo")
+            yt_rows = []
+            for nome, art in artistas_sel.items():
+                live_yt  = live.get(nome, {}).get("data", {}).get("youtube", {}).get("inscritos")
+                saved_yt = art.get("youtube", {}).get("inscritos", 0)
+                if live_yt is not None:
+                    yt_rows.append({"Artista": nome, "Tipo": "🔴 Ao Vivo", "Inscritos": live_yt})
+                yt_rows.append({"Artista": nome, "Tipo": "📋 Salvo", "Inscritos": saved_yt})
+            if yt_rows:
+                df_yt2 = pd.DataFrame(yt_rows)
+                fig_yt2 = px.bar(df_yt2, x="Artista", y="Inscritos", color="Tipo",
+                                 barmode="group", template="plotly_dark",
+                                 color_discrete_map={"🔴 Ao Vivo": "#FF0000", "📋 Salvo": "#555"},
+                                 text=df_yt2["Inscritos"].apply(fmt))
+                fig_yt2.update_layout(paper_bgcolor="#0F1117", plot_bgcolor="#161B22",
+                                      font_color="white", height=380, legend_title="")
+                fig_yt2.update_traces(textposition="outside")
+                st.plotly_chart(fig_yt2, use_container_width=True)
+
+        # ── Cards individuais por artista ─────────────────────────────────────
+        st.markdown("---")
+        st.markdown("#### 🎤 Perfis Individuais — Dados ao Vivo")
+
+        for nome in artistas_sel:
+            live_art = live.get(nome, {})
+            if not live_art.get("data"):
+                continue
+            art     = artistas_sel[nome]
+            cor_art = art["cor"]
+            plat_data = live_art["data"]
+
+            with st.expander(f"{nome}  ·  🕐 {live_art.get('timestamp','—')}", expanded=False):
+                cols_art = st.columns(len(plat_data))
+                plat_icons = {"deezer": ("🔴", "#EF5466"), "spotify": ("🟢", "#1DB954"), "youtube": ("▶️", "#FF0000")}
+                for i, (plat, pdata) in enumerate(plat_data.items()):
+                    icon, cor = plat_icons.get(plat, ("🔵", "#888"))
+                    with cols_art[i]:
+                        st.markdown(f"**{icon} {plat.title()}**")
+                        if plat == "deezer":
+                            saved = art.get("deezer", {}).get("fans", 0)
+                            delta = pdata["fans"] - saved
+                            st.metric("Fans", fmt(pdata["fans"]),
+                                      delta=f"{'+' if delta >= 0 else ''}{fmt(abs(delta))}",
+                                      delta_color="normal" if delta >= 0 else "inverse")
+                            st.caption(f"Álbuns: {pdata.get('albuns','—')}")
+                            if pdata.get("url"):
+                                st.markdown(f"[Abrir perfil]({pdata['url']})")
+                        elif plat == "spotify":
+                            saved = art.get("spotify", {}).get("seguidores", 0)
+                            delta = pdata["seguidores"] - saved
+                            st.metric("Seguidores", fmt(pdata["seguidores"]),
+                                      delta=f"{'+' if delta >= 0 else ''}{fmt(abs(delta))}",
+                                      delta_color="normal" if delta >= 0 else "inverse")
+                            st.metric("Popularidade", pdata.get("popularidade", "—"))
+                            if pdata.get("url"):
+                                st.markdown(f"[Abrir perfil]({pdata['url']})")
+                        elif plat == "youtube":
+                            saved = art.get("youtube", {}).get("inscritos", 0)
+                            delta = pdata["inscritos"] - saved
+                            st.metric("Inscritos", fmt(pdata["inscritos"]),
+                                      delta=f"{'+' if delta >= 0 else ''}{fmt(abs(delta))}",
+                                      delta_color="normal" if delta >= 0 else "inverse")
+                            st.metric("Views Total", fmt(pdata.get("views_total", 0)))
+                            if pdata.get("url"):
+                                st.markdown(f"[Abrir canal]({pdata['url']})")
 
 # ─────────────────────────────────────────────────────────
 # RODAPÉ
