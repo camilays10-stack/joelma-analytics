@@ -44,7 +44,7 @@ ARTISTAS = [
         },
         "base": {
             "spotify": 713_506, "deezer": 196_375,
-            "youtube": 1_790_000, "instagram": 5_864_066, "tiktok": 2_900_000,
+            "youtube": 1_803_017, "instagram": 5_864_066, "tiktok": 2_900_000,
         },
     },
     {
@@ -58,7 +58,7 @@ ARTISTAS = [
         },
         "base": {
             "spotify": 9_813_112, "deezer": 4_972_139,
-            "youtube": 12_000_000, "instagram": 39_963_840, "tiktok": 6_200_000,
+            "youtube": 14_767_512, "instagram": 39_963_840, "tiktok": 6_200_000,
         },
     },
     {
@@ -72,7 +72,7 @@ ARTISTAS = [
         },
         "base": {
             "spotify": 12_720_687, "deezer": 1_034_457,
-            "youtube": 4_730_000, "instagram": 40_058_739, "tiktok": 17_600_000,
+            "youtube": 6_340_000, "instagram": 40_058_739, "tiktok": 17_600_000,
         },
     },
     {
@@ -80,13 +80,13 @@ ARTISTAS = [
         "ids": {
             "spotify":   "43DRDu6nLSeIedZ7T1A616",
             "deezer":    "5832280",
-            "youtube":   "",
+            "youtube":   "UCfuRRJ76VluLiHW2pqwZNwg",
             "instagram": "xandaviao",
             "tiktok":    ["xandaviao"],
         },
         "base": {
             "spotify": 7_198_010, "deezer": 2_321_104,
-            "youtube": 0, "instagram": 10_075_850, "tiktok": 1_200_000,
+            "youtube": 6_003_468, "instagram": 10_075_850, "tiktok": 1_200_000,
         },
     },
     {
@@ -94,13 +94,13 @@ ARTISTAS = [
         "ids": {
             "spotify":   "3Hew3AuvrbKxCbehT4Rorq",
             "deezer":    "9910102",
-            "youtube":   "",
+            "youtube":   "UCmefFmh-DKDUoxH67_b-5Vg",
             "instagram": "solangealmeida",
             "tiktok":    ["solangealmeidaoficial"],
         },
         "base": {
             "spotify": 1_507_526, "deezer": 537_544,
-            "youtube": 0, "instagram": 9_129_987, "tiktok": 1_700_000,
+            "youtube": 1_486_188, "instagram": 9_129_987, "tiktok": 1_700_000,
         },
     },
     {
@@ -114,7 +114,7 @@ ARTISTAS = [
         },
         "base": {
             "spotify": 12_647_334, "deezer": 1_338_072,
-            "youtube": 8_000_000, "instagram": 23_600_000, "tiktok": 16_700_000,
+            "youtube": 5_010_044, "instagram": 23_600_000, "tiktok": 16_700_000,
         },
     },
     # ── CANTORAS PARAENSES ────────────────────────────────────
@@ -129,7 +129,7 @@ ARTISTAS = [
         },
         "base": {
             "spotify": 3_279_663, "deezer": 177_258,
-            "youtube": 2_500_000, "instagram": 5_000_000, "tiktok": 3_500_000,
+            "youtube": 3_139_207, "instagram": 5_000_000, "tiktok": 3_500_000,
         },
     },
     {
@@ -137,13 +137,13 @@ ARTISTAS = [
         "ids": {
             "spotify":   "6n45wsxj6sDedgwEyTza6d",
             "deezer":    "95771",
-            "youtube":   "",
+            "youtube":   "UCtcfUTKe5ueMJn6T4zO96gw",
             "instagram": "fafadbelem",
             "tiktok":    [],
         },
         "base": {
             "spotify": 1_156_551, "deezer": 65_926,
-            "youtube": 0, "instagram": 1_000_000, "tiktok": 0,
+            "youtube": 220_000, "instagram": 1_000_000, "tiktok": 0,
         },
     },
     {
@@ -151,13 +151,13 @@ ARTISTAS = [
         "ids": {
             "spotify":   "5kn7l4yaJxtNhj583LmL9L",
             "deezer":    "1233002",
-            "youtube":   "",
+            "youtube":   "UCWVqQd0rDx4wV_nS-Ou9ciA",
             "instagram": "gabyamarantos",
             "tiktok":    ["gabyamarantos"],
         },
         "base": {
             "spotify": 448_607, "deezer": 179_870,
-            "youtube": 0, "instagram": 1_169_828, "tiktok": 294_900,
+            "youtube": 177_887, "instagram": 1_169_828, "tiktok": 294_900,
         },
     },
     {
@@ -165,13 +165,13 @@ ARTISTAS = [
         "ids": {
             "spotify":   "1p2aDZsmPNSKQynqjXN7Hj",
             "deezer":    "7968118",
-            "youtube":   "",
+            "youtube":   "UCgvjqzxfjSY3pn69bqsRfJQ",
             "instagram": "vivianebatidaoficial",
             "tiktok":    ["vivianebatidaooficial"],
         },
         "base": {
             "spotify": 388_662, "deezer": 24_994,
-            "youtube": 0, "instagram": 1_141_871, "tiktok": 464_100,
+            "youtube": 158_000, "instagram": 1_141_871, "tiktok": 464_100,
         },
     },
     {
@@ -179,13 +179,13 @@ ARTISTAS = [
         "ids": {
             "spotify":   "3g5sxvKldw7Kss4e5FPSXb",
             "deezer":    "123326172",
-            "youtube":   "",
+            "youtube":   "UCclm3JTX_bEiL6NUnBljhxg",
             "instagram": "zaynaraa",
             "tiktok":    ["zaynara"],
         },
         "base": {
             "spotify": 175_863, "deezer": 2_898,
-            "youtube": 0, "instagram": 477_775, "tiktok": 304_500,
+            "youtube": 110_000, "instagram": 477_775, "tiktok": 304_500,
         },
     },
 ]
@@ -257,41 +257,19 @@ def coletar_deezer(deezer_id):
     except Exception: pass
     return None, False
 
-# ── YOUTUBE ───────────────────────────────────────────────────
+# ── YOUTUBE (via mixerno.space — funciona sem API key) ────────
 def coletar_youtube(channel_id):
     if not channel_id: return None, False
-    # Método 1: Scraping da página do canal
-    try:
-        url = f"https://www.youtube.com/channel/{channel_id}"
-        r = SESSION.get(url, headers={"Accept": "text/html"}, timeout=12)
-        if r.status_code == 200:
-            html = r.text
-            for pat in [
-                r'"subscriberCountText".*?"simpleText"\s*:\s*"([\d,.KM ]+)"',
-                r'"(\d+)\s+inscritos"',
-                r'"(\d+)\s+subscribers"',
-                r'subscriberCount["\s:]+(\d+)',
-                r'"channelMetadataRenderer".*?"subscriberCount"\s*:\s*"(\d+)"',
-            ]:
-                m = re.search(pat, html, re.S | re.I)
-                if m:
-                    raw = m.group(1).replace(",", "").replace(".", "").strip()
-                    if raw.isdigit() and int(raw) > 1000:
-                        return int(raw), True
-    except Exception: pass
-
-    # Método 2: youtubers.me
     try:
         r = SESSION.get(
-            f"https://us.youtubers.me/channel/{channel_id}/youtube-statistics",
-            timeout=10)
+            f"https://mixerno.space/api/youtube-channel-counter/user/{channel_id}",
+            timeout=12)
         if r.status_code == 200:
-            m = re.search(r'"subscribers"\s*:\s*"?([\d,]+)"?', r.text, re.I)
-            if m:
-                n = int(m.group(1).replace(",", ""))
-                if n > 1000: return n, True
+            counts = r.json().get("counts", [])
+            subs = next((c["count"] for c in counts if c.get("value") == "subscribers"), None)
+            if subs and int(subs) > 100:
+                return int(subs), True
     except Exception: pass
-
     return None, False
 
 # ── INSTAGRAM ─────────────────────────────────────────────────
@@ -576,9 +554,12 @@ def mostrar_historico():
 
 def main():
     parser = argparse.ArgumentParser(description="Joelma Digital — 5 Plataformas")
-    parser.add_argument("--historico", action="store_true")
-    parser.add_argument("--grupo",     help="joelma | nacional | paraense")
-    parser.add_argument("--artista",   help='Nome parcial do artista')
+    parser.add_argument("--historico",  action="store_true")
+    parser.add_argument("--grupo",      help="joelma | nacional | paraense")
+    parser.add_argument("--artista",    help="Nome parcial do artista")
+    parser.add_argument("--spotify",    action="store_true", help="Inclui coleta Spotify")
+    parser.add_argument("--json-only",  action="store_true", dest="json_only",
+                        help="Salva JSON sem exibir tabela (para CI/CD)")
     args = parser.parse_args()
 
     if args.historico:
@@ -600,21 +581,25 @@ def main():
 
     resultados = []
     for art in artistas:
-        if RICH:
-            console.print(f"[dim]→ {art['nome']}...[/dim]")
-        else:
-            print(f"→ {art['nome']}...")
+        if not args.json_only:
+            if RICH:
+                console.print(f"[dim]→ {art['nome']}...[/dim]")
+            else:
+                print(f"→ {art['nome']}...")
         resultados.append(coletar_artista(art))
         time.sleep(0.6)
 
-    exibir(resultados)
+    if not args.json_only:
+        exibir(resultados)
     salvar(resultados)
 
-    if RICH:
+    if not args.json_only and RICH:
         console.print(
             f"\n[dim]💾 Histórico: {HISTORICO_FILE}[/dim]\n"
             f"[dim]🕐 {datetime.now().strftime('%d/%m/%Y às %H:%M:%S')}[/dim]"
         )
+    elif args.json_only:
+        print(f"✅ {datetime.now().strftime('%Y-%m-%dT%H:%M:%S')} — {len(resultados)} artistas salvos em {HISTORICO_FILE}")
 
 if __name__ == "__main__":
     main()
