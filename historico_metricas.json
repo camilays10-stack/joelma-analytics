@@ -1,0 +1,4494 @@
+[
+  {
+    "timestamp": "2026-06-04T13:35:52.738327",
+    "dados": [
+      {
+        "nome": "🎤 JOELMA",
+        "destaque": true,
+        "spotify": {
+          "valor": 713506,
+          "status": "⚠️ padrão não encontrado",
+          "ao_vivo": false
+        },
+        "instagram": {
+          "valor": 5800000,
+          "status": "—",
+          "ao_vivo": false
+        },
+        "tiktok": {
+          "valor": 2900000,
+          "handle": "",
+          "status": "—",
+          "ao_vivo": false
+        },
+        "timestamp": "2026-06-04T13:35:47.334172"
+      },
+      {
+        "nome": "🤠 Wesley Safadão",
+        "destaque": false,
+        "spotify": {
+          "valor": 9813112,
+          "status": "⚠️ padrão não encontrado",
+          "ao_vivo": false
+        },
+        "instagram": {
+          "valor": 39900000,
+          "status": "—",
+          "ao_vivo": false
+        },
+        "tiktok": {
+          "valor": 6200000,
+          "handle": "",
+          "status": "—",
+          "ao_vivo": false
+        },
+        "timestamp": "2026-06-04T13:35:48.538686"
+      },
+      {
+        "nome": "👑 Simone Mendes",
+        "destaque": false,
+        "spotify": {
+          "valor": 12720687,
+          "status": "⚠️ padrão não encontrado",
+          "ao_vivo": false
+        },
+        "instagram": {
+          "valor": 40000000,
+          "status": "—",
+          "ao_vivo": false
+        },
+        "tiktok": {
+          "valor": 17600000,
+          "handle": "",
+          "status": "—",
+          "ao_vivo": false
+        },
+        "timestamp": "2026-06-04T13:35:49.690591"
+      },
+      {
+        "nome": "✈️  Xand Avião",
+        "destaque": false,
+        "spotify": {
+          "valor": 7198010,
+          "status": "⚠️ padrão não encontrado",
+          "ao_vivo": false
+        },
+        "instagram": {
+          "valor": 10200000,
+          "status": "—",
+          "ao_vivo": false
+        },
+        "tiktok": {
+          "valor": 1100000,
+          "handle": "",
+          "status": "—",
+          "ao_vivo": false
+        },
+        "timestamp": "2026-06-04T13:35:50.924235"
+      },
+      {
+        "nome": "☀️  Solange Almeida",
+        "destaque": false,
+        "spotify": {
+          "valor": 1507526,
+          "status": "⚠️ padrão não encontrado",
+          "ao_vivo": false
+        },
+        "instagram": {
+          "valor": 9000000,
+          "status": "—",
+          "ao_vivo": false
+        },
+        "tiktok": {
+          "valor": 1700000,
+          "handle": "",
+          "status": "—",
+          "ao_vivo": false
+        },
+        "timestamp": "2026-06-04T13:35:52.110862"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-06-04T13:36:10.860396",
+    "dados": [
+      {
+        "nome": "🎤 JOELMA",
+        "destaque": true,
+        "spotify": {
+          "valor": 713506,
+          "status": "⚠️ padrão não encontrado",
+          "ao_vivo": false
+        },
+        "instagram": {
+          "valor": 5864067,
+          "status": "✅ ao vivo (API)",
+          "ao_vivo": true
+        },
+        "tiktok": {
+          "valor": 2900000,
+          "handle": "@joelmaareal",
+          "status": "⚠️ bloqueado — usando base",
+          "ao_vivo": false
+        },
+        "timestamp": "2026-06-04T13:36:10.243241"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-06-04T13:36:47.218170",
+    "dados": [
+      {
+        "nome": "🎤 JOELMA",
+        "destaque": true,
+        "spotify": {
+          "valor": 713506,
+          "status": "⚠️ padrão não encontrado",
+          "ao_vivo": false
+        },
+        "instagram": {
+          "valor": 5864066,
+          "status": "✅ ao vivo (API)",
+          "ao_vivo": true
+        },
+        "tiktok": {
+          "valor": 2900000,
+          "handle": "@joelmaareal",
+          "status": "⚠️ bloqueado — usando base",
+          "ao_vivo": false
+        },
+        "timestamp": "2026-06-04T13:36:27.959272"
+      },
+      {
+        "nome": "🤠 Wesley Safadão",
+        "destaque": false,
+        "spotify": {
+          "valor": 9813112,
+          "status": "⚠️ padrão não encontrado",
+          "ao_vivo": false
+        },
+        "instagram": {
+          "valor": 39963840,
+          "status": "✅ ao vivo (API)",
+          "ao_vivo": true
+        },
+        "tiktok": {
+          "valor": 6200000,
+          "handle": "@wesleysafadao",
+          "status": "⚠️ bloqueado — usando base",
+          "ao_vivo": false
+        },
+        "timestamp": "2026-06-04T13:36:31.952567"
+      },
+      {
+        "nome": "👑 Simone Mendes",
+        "destaque": false,
+        "spotify": {
+          "valor": 12720687,
+          "status": "⚠️ padrão não encontrado",
+          "ao_vivo": false
+        },
+        "instagram": {
+          "valor": 40058739,
+          "status": "✅ ao vivo (API)",
+          "ao_vivo": true
+        },
+        "tiktok": {
+          "valor": 17600000,
+          "handle": "@simoneses",
+          "status": "⚠️ bloqueado — usando base",
+          "ao_vivo": false
+        },
+        "timestamp": "2026-06-04T13:36:35.359596"
+      },
+      {
+        "nome": "✈️  Xand Avião",
+        "destaque": false,
+        "spotify": {
+          "valor": 7198010,
+          "status": "⚠️ padrão não encontrado",
+          "ao_vivo": false
+        },
+        "instagram": {
+          "valor": 10075704,
+          "status": "✅ ao vivo (API)",
+          "ao_vivo": true
+        },
+        "tiktok": {
+          "valor": 1100000,
+          "handle": "@xandaviao",
+          "status": "⚠️ bloqueado — usando base",
+          "ao_vivo": false
+        },
+        "timestamp": "2026-06-04T13:36:41.801984"
+      },
+      {
+        "nome": "☀️  Solange Almeida",
+        "destaque": false,
+        "spotify": {
+          "valor": 1507526,
+          "status": "⚠️ padrão não encontrado",
+          "ao_vivo": false
+        },
+        "instagram": {
+          "valor": 9129987,
+          "status": "✅ ao vivo (API)",
+          "ao_vivo": true
+        },
+        "tiktok": {
+          "valor": 1700000,
+          "handle": "@qgdasol",
+          "status": "⚠️ bloqueado — usando base",
+          "ao_vivo": false
+        },
+        "timestamp": "2026-06-04T13:36:46.593286"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-06-04T13:47:28.150493",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864077,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963867,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058770,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075713,
+        "tiktok": 1100000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130000,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T13:48:02.758959",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864079,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963869,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058771,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075714,
+        "tiktok": 1100000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130002,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T13:48:21.108583",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864079,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963870,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058775,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075714,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130003,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T13:52:17.213074",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864083,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963876,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058790,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075714,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130002,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T13:52:38.962599",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864083,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963875,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058790,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075714,
+        "tiktok": 1100000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130003,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T13:53:40.620215",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864082,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963874,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058789,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075714,
+        "tiktok": 1100000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130004,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T13:57:53.838223",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864084,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963885,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058803,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075716,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130013,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T13:58:56.081346",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864084,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963889,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058805,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075718,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130014,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T14:03:13.573981",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864091,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963885,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058821,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075732,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130021,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T14:04:10.629547",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864093,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963882,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058820,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075733,
+        "tiktok": 1100000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130018,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T14:08:33.286307",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864102,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963884,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058833,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075738,
+        "tiktok": 1100000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130021,
+        "tiktok": 1700000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T14:09:25.126393",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864104,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963884,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058834,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075740,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130024,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T14:13:47.371963",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864110,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963889,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058847,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075737,
+        "tiktok": 1100000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130030,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T14:14:43.387753",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864110,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963891,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058850,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075738,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130030,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T14:19:02.288079",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864116,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963881,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058861,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075743,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130032,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T14:19:58.831730",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864118,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963879,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058861,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075743,
+        "tiktok": 1100000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130032,
+        "tiktok": 1700000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T14:21:58.405519",
+    "dados": [
+      {
+        "nome": "🎤 JOELMA",
+        "destaque": true,
+        "spotify": {
+          "valor": 713506,
+          "status": "⚠️ padrão não encontrado",
+          "ao_vivo": false
+        },
+        "instagram": {
+          "valor": 5864120,
+          "status": "✅ ao vivo (API)",
+          "ao_vivo": true
+        },
+        "tiktok": {
+          "valor": 2900000,
+          "handle": "@joelmaareal",
+          "status": "⚠️ bloqueado — usando base",
+          "ao_vivo": false
+        },
+        "timestamp": "2026-06-04T14:21:37.908336"
+      },
+      {
+        "nome": "🤠 Wesley Safadão",
+        "destaque": false,
+        "spotify": {
+          "valor": 9813112,
+          "status": "⚠️ padrão não encontrado",
+          "ao_vivo": false
+        },
+        "instagram": {
+          "valor": 39963877,
+          "status": "✅ ao vivo (API)",
+          "ao_vivo": true
+        },
+        "tiktok": {
+          "valor": 6200000,
+          "handle": "@wesleysafadao",
+          "status": "⚠️ bloqueado — usando base",
+          "ao_vivo": false
+        },
+        "timestamp": "2026-06-04T14:21:42.950947"
+      },
+      {
+        "nome": "👑 Simone Mendes",
+        "destaque": false,
+        "spotify": {
+          "valor": 12720687,
+          "status": "⚠️ padrão não encontrado",
+          "ao_vivo": false
+        },
+        "instagram": {
+          "valor": 40058869,
+          "status": "✅ ao vivo (API)",
+          "ao_vivo": true
+        },
+        "tiktok": {
+          "valor": 17600000,
+          "handle": "@simoneses",
+          "status": "⚠️ bloqueado — usando base",
+          "ao_vivo": false
+        },
+        "timestamp": "2026-06-04T14:21:47.636991"
+      },
+      {
+        "nome": "✈️  Xand Avião",
+        "destaque": false,
+        "spotify": {
+          "valor": 7198010,
+          "status": "⚠️ padrão não encontrado",
+          "ao_vivo": false
+        },
+        "instagram": {
+          "valor": 10075744,
+          "status": "✅ ao vivo (API)",
+          "ao_vivo": true
+        },
+        "tiktok": {
+          "valor": 1100000,
+          "handle": "@xandaviao",
+          "status": "⚠️ bloqueado — usando base",
+          "ao_vivo": false
+        },
+        "timestamp": "2026-06-04T14:21:53.236507"
+      },
+      {
+        "nome": "☀️  Solange Almeida",
+        "destaque": false,
+        "spotify": {
+          "valor": 1507526,
+          "status": "⚠️ padrão não encontrado",
+          "ao_vivo": false
+        },
+        "instagram": {
+          "valor": 9130036,
+          "status": "✅ ao vivo (API)",
+          "ao_vivo": true
+        },
+        "tiktok": {
+          "valor": 1700000,
+          "handle": "@solangealmeidaoficial",
+          "status": "⚠️ bloqueado — usando base",
+          "ao_vivo": false
+        },
+        "timestamp": "2026-06-04T14:21:57.775751"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-06-04T14:23:11.622533",
+    "dados": [
+      {
+        "nome": "🎤 JOELMA",
+        "destaque": true,
+        "spotify": {
+          "valor": 713506,
+          "status": "⚠️ padrão não encontrado",
+          "ao_vivo": false
+        },
+        "instagram": {
+          "valor": 5864122,
+          "status": "✅ ao vivo (API)",
+          "ao_vivo": true
+        },
+        "tiktok": {
+          "valor": 2900000,
+          "handle": "@joelmaareal",
+          "status": "⚠️ bloqueado — usando base",
+          "ao_vivo": false
+        },
+        "timestamp": "2026-06-04T14:22:51.045420"
+      },
+      {
+        "nome": "🤠 Wesley Safadão",
+        "destaque": false,
+        "spotify": {
+          "valor": 9813112,
+          "status": "⚠️ padrão não encontrado",
+          "ao_vivo": false
+        },
+        "instagram": {
+          "valor": 39963876,
+          "status": "✅ ao vivo (API)",
+          "ao_vivo": true
+        },
+        "tiktok": {
+          "valor": 6200000,
+          "handle": "@wesleysafadao",
+          "status": "⚠️ bloqueado — usando base",
+          "ao_vivo": false
+        },
+        "timestamp": "2026-06-04T14:22:55.119748"
+      },
+      {
+        "nome": "👑 Simone Mendes",
+        "destaque": false,
+        "spotify": {
+          "valor": 12720687,
+          "status": "⚠️ padrão não encontrado",
+          "ao_vivo": false
+        },
+        "instagram": {
+          "valor": 40058873,
+          "status": "✅ ao vivo (API)",
+          "ao_vivo": true
+        },
+        "tiktok": {
+          "valor": 17600000,
+          "handle": "@simoneses",
+          "status": "⚠️ bloqueado — usando base",
+          "ao_vivo": false
+        },
+        "timestamp": "2026-06-04T14:23:00.358013"
+      },
+      {
+        "nome": "✈️  Xand Avião",
+        "destaque": false,
+        "spotify": {
+          "valor": 7198010,
+          "status": "⚠️ padrão não encontrado",
+          "ao_vivo": false
+        },
+        "instagram": {
+          "valor": 10075746,
+          "status": "✅ ao vivo (API)",
+          "ao_vivo": true
+        },
+        "tiktok": {
+          "valor": 1100000,
+          "handle": "@xandaviao",
+          "status": "⚠️ bloqueado — usando base",
+          "ao_vivo": false
+        },
+        "timestamp": "2026-06-04T14:23:05.773005"
+      },
+      {
+        "nome": "☀️  Solange Almeida",
+        "destaque": false,
+        "spotify": {
+          "valor": 1507526,
+          "status": "⚠️ padrão não encontrado",
+          "ao_vivo": false
+        },
+        "instagram": {
+          "valor": 9130038,
+          "status": "✅ ao vivo (API)",
+          "ao_vivo": true
+        },
+        "tiktok": {
+          "valor": 1700000,
+          "handle": "@solangealmeidaoficial",
+          "status": "⚠️ bloqueado — usando base",
+          "ao_vivo": false
+        },
+        "timestamp": "2026-06-04T14:23:10.993898"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-06-04T14:24:17.207048",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864122,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963874,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058880,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075744,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130039,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T14:25:15.063579",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864123,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963880,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058880,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075744,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130041,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T14:29:34.761073",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864129,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963882,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058899,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075754,
+        "tiktok": 1100000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130045,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T14:30:34.390165",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864129,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963888,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058904,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075755,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130047,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T14:34:49.533048",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864135,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963892,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058909,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075757,
+        "tiktok": 1100000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130049,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T14:35:49.892942",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864133,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963897,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058909,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075755,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130049,
+        "tiktok": 1700000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T14:40:04.440123",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864137,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963906,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058915,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075752,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130057,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T14:41:05.891249",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864137,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963908,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058919,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075756,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130056,
+        "tiktok": 1700000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T14:45:19.112786",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864142,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963923,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058930,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075764,
+        "tiktok": 1100000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130053,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T14:46:22.268135",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864142,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963924,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058934,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075764,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130053,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T14:50:33.648110",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864148,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963926,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058945,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075764,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130056,
+        "tiktok": 1700000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T14:51:36.284481",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864150,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963928,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T14:55:45.298995",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T14:56:48.320988",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T15:01:27.287519",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T15:02:31.732329",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T15:06:39.554902",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T15:11:53.288253",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T15:16:00.372700",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T15:17:31.313560",
+    "dados": [
+      {
+        "nome": "🎤 JOELMA",
+        "destaque": true,
+        "spotify": {
+          "valor": 713506,
+          "status": "⚠️ padrão não encontrado",
+          "ao_vivo": false
+        },
+        "instagram": {
+          "valor": 5800000,
+          "status": "⚠️ bloqueado — usando base",
+          "ao_vivo": false
+        },
+        "tiktok": {
+          "valor": 2900000,
+          "handle": "@joelmaareal",
+          "status": "⚠️ bloqueado — usando base",
+          "ao_vivo": false
+        },
+        "timestamp": "2026-06-04T15:16:53.950957"
+      },
+      {
+        "nome": "🤠 Wesley Safadão",
+        "destaque": false,
+        "spotify": {
+          "valor": 9813112,
+          "status": "⚠️ padrão não encontrado",
+          "ao_vivo": false
+        },
+        "instagram": {
+          "valor": 39900000,
+          "status": "⚠️ bloqueado — usando base",
+          "ao_vivo": false
+        },
+        "tiktok": {
+          "valor": 6200000,
+          "handle": "@wesleysafadao",
+          "status": "⚠️ bloqueado — usando base",
+          "ao_vivo": false
+        },
+        "timestamp": "2026-06-04T15:16:57.614020"
+      },
+      {
+        "nome": "👑 Simone Mendes",
+        "destaque": false,
+        "spotify": {
+          "valor": 12720687,
+          "status": "⚠️ padrão não encontrado",
+          "ao_vivo": false
+        },
+        "instagram": {
+          "valor": 40000000,
+          "status": "⚠️ bloqueado — usando base",
+          "ao_vivo": false
+        },
+        "tiktok": {
+          "valor": 17600000,
+          "handle": "@simoneses",
+          "status": "⚠️ bloqueado — usando base",
+          "ao_vivo": false
+        },
+        "timestamp": "2026-06-04T15:17:01.185653"
+      },
+      {
+        "nome": "✈️  Xand Avião",
+        "destaque": false,
+        "spotify": {
+          "valor": 7198010,
+          "status": "⚠️ padrão não encontrado",
+          "ao_vivo": false
+        },
+        "instagram": {
+          "valor": 10200000,
+          "status": "⚠️ bloqueado — usando base",
+          "ao_vivo": false
+        },
+        "tiktok": {
+          "valor": 1100000,
+          "handle": "@xandaviao",
+          "status": "⚠️ bloqueado — usando base",
+          "ao_vivo": false
+        },
+        "timestamp": "2026-06-04T15:17:04.447274"
+      },
+      {
+        "nome": "☀️  Solange Almeida",
+        "destaque": false,
+        "spotify": {
+          "valor": 1507526,
+          "status": "⚠️ padrão não encontrado",
+          "ao_vivo": false
+        },
+        "instagram": {
+          "valor": 9000000,
+          "status": "⚠️ bloqueado — usando base",
+          "ao_vivo": false
+        },
+        "tiktok": {
+          "valor": 1700000,
+          "handle": "@solangealmeidaoficial",
+          "status": "⚠️ bloqueado — usando base",
+          "ao_vivo": false
+        },
+        "timestamp": "2026-06-04T15:17:07.792406"
+      },
+      {
+        "nome": "🌾  Ana Castela",
+        "destaque": false,
+        "spotify": {
+          "valor": 12647334,
+          "status": "⚠️ padrão não encontrado",
+          "ao_vivo": false
+        },
+        "instagram": {
+          "valor": 23600000,
+          "status": "⚠️ bloqueado — usando base",
+          "ao_vivo": false
+        },
+        "tiktok": {
+          "valor": 16700000,
+          "handle": "@anacastelacantora",
+          "status": "⚠️ bloqueado — usando base",
+          "ao_vivo": false
+        },
+        "timestamp": "2026-06-04T15:17:13.130397"
+      },
+      {
+        "nome": "🎶  Manu Bahtidão",
+        "destaque": false,
+        "spotify": {
+          "valor": 3279663,
+          "status": "⚠️ padrão não encontrado",
+          "ao_vivo": false
+        },
+        "instagram": {
+          "valor": 5000000,
+          "status": "⚠️ bloqueado — usando base",
+          "ao_vivo": false
+        },
+        "tiktok": {
+          "valor": 3500000,
+          "handle": "@manuoficial",
+          "status": "⚠️ bloqueado — usando base",
+          "ao_vivo": false
+        },
+        "timestamp": "2026-06-04T15:17:17.217815"
+      },
+      {
+        "nome": "🌺  Fafá de Belém",
+        "destaque": false,
+        "spotify": {
+          "valor": 1156551,
+          "status": "⚠️ padrão não encontrado",
+          "ao_vivo": false
+        },
+        "instagram": {
+          "valor": 1000000,
+          "status": "⚠️ bloqueado — usando base",
+          "ao_vivo": false
+        },
+        "tiktok": {
+          "valor": 0,
+          "handle": "",
+          "status": "⚠️ bloqueado — usando base",
+          "ao_vivo": false
+        },
+        "timestamp": "2026-06-04T15:17:19.392639"
+      },
+      {
+        "nome": "💎  Gaby Amarantos",
+        "destaque": false,
+        "spotify": {
+          "valor": 448607,
+          "status": "⚠️ padrão não encontrado",
+          "ao_vivo": false
+        },
+        "instagram": {
+          "valor": 1000000,
+          "status": "⚠️ bloqueado — usando base",
+          "ao_vivo": false
+        },
+        "tiktok": {
+          "valor": 295000,
+          "handle": "@gabyamarantos",
+          "status": "⚠️ bloqueado — usando base",
+          "ao_vivo": false
+        },
+        "timestamp": "2026-06-04T15:17:23.513109"
+      },
+      {
+        "nome": "🎵  Viviane Batidão",
+        "destaque": false,
+        "spotify": {
+          "valor": 388662,
+          "status": "⚠️ padrão não encontrado",
+          "ao_vivo": false
+        },
+        "instagram": {
+          "valor": 1000000,
+          "status": "⚠️ bloqueado — usando base",
+          "ao_vivo": false
+        },
+        "tiktok": {
+          "valor": 500000,
+          "handle": "@vivianebatidaooficial",
+          "status": "⚠️ bloqueado — usando base",
+          "ao_vivo": false
+        },
+        "timestamp": "2026-06-04T15:17:27.229560"
+      },
+      {
+        "nome": "⭐  Zaynara",
+        "destaque": false,
+        "spotify": {
+          "valor": 175863,
+          "status": "⚠️ padrão não encontrado",
+          "ao_vivo": false
+        },
+        "instagram": {
+          "valor": 478000,
+          "status": "⚠️ bloqueado — usando base",
+          "ao_vivo": false
+        },
+        "tiktok": {
+          "valor": 304000,
+          "handle": "@zaynara",
+          "status": "⚠️ bloqueado — usando base",
+          "ao_vivo": false
+        },
+        "timestamp": "2026-06-04T15:17:30.679815"
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-06-04T15:17:50.495586",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1100000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T15:42:28.204235",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864190,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963922,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40059030,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075794,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130097,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T15:43:33.416851",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864191,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963924,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40059027,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075794,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130098,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T15:47:43.926894",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864197,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963924,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40059030,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075795,
+        "tiktok": 1100000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130103,
+        "tiktok": 1700000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T15:48:48.774168",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864199,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963924,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40059035,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075794,
+        "tiktok": 1100000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130104,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T15:53:00.155983",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864201,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963928,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40059031,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075795,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130105,
+        "tiktok": 1700000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T15:54:04.322903",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864200,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963925,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40059029,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075793,
+        "tiktok": 1100000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130106,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T15:58:14.455852",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864203,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963925,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40059036,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075798,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130110,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T15:59:27.157138",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864205,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963922,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40059038,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075800,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130110,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T16:03:31.707892",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864211,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963918,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40059047,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075805,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130112,
+        "tiktok": 1700000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T16:04:45.071522",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864213,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963918,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40059046,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075807,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130113,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T16:08:47.669890",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864216,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963917,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40059051,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075810,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130113,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T16:09:56.979878",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1100000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1700000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T16:13:59.344379",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1700000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T16:15:08.479755",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T16:19:17.056285",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T16:20:21.382644",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1100000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T16:24:29.134634",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T16:25:33.748416",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T16:29:42.854414",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T16:30:45.512534",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1100000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T16:34:54.450028",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1100000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1700000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T16:35:57.640376",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1100000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T16:40:06.070898",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T16:41:10.644027",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T16:45:17.947468",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T16:46:24.964843",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T16:50:30.710254",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T16:51:40.040013",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T16:55:42.957576",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T16:56:52.651367",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T17:00:57.538397",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T17:02:06.061707",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T17:06:10.360710",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T17:07:21.236214",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T17:11:23.391029",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1100000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T17:12:37.935198",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T17:16:37.208051",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1100000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T17:17:50.299780",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T17:21:51.610703",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1700000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T17:23:03.248512",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T17:27:04.408717",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T17:28:15.498774",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T17:32:18.327534",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T17:33:29.075734",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T17:37:31.974645",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T17:38:40.641879",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T17:42:44.769907",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1100000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T17:43:52.915689",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T17:47:57.059288",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864291,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1100000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T17:49:05.049264",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1100000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T17:53:10.886416",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1100000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T17:54:16.723464",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T17:58:23.784411",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T17:59:27.876396",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1100000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T18:03:35.949274",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T18:04:40.682944",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T18:08:50.027403",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1700000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T18:09:53.942924",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T18:31:25.769558",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1700000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T18:32:44.829440",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864330,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39964042,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40059385,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075921,
+        "tiktok": 1100000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130231,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T19:24:52.016731",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1100000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1700000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T19:26:12.571175",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1100000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T19:30:04.899467",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T19:31:25.011003",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T19:35:16.782132",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1700000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T19:36:41.434245",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1100000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T19:40:07.722905",
+    "dados": {
+      "🎤 JOELMA": {
+        "spotify": 713506,
+        "deezer": 196375,
+        "youtube": 1790000,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T19:40:29.339912",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T19:41:53.055640",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T19:41:57.762504",
+    "dados": {
+      "🎤 JOELMA": {
+        "spotify": 713506,
+        "deezer": 196375,
+        "youtube": 1790000,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "🤠 Wesley Safadão": {
+        "spotify": 9813112,
+        "deezer": 4972140,
+        "youtube": 12000000,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "👑 Simone Mendes": {
+        "spotify": 12720687,
+        "deezer": 1034459,
+        "youtube": 4730000,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "✈️  Xand Avião": {
+        "spotify": 7198010,
+        "deezer": 2320969,
+        "youtube": 0,
+        "instagram": 10075704,
+        "tiktok": 1100000
+      },
+      "☀️  Solange Almeida": {
+        "spotify": 1507526,
+        "deezer": 537544,
+        "youtube": 0,
+        "instagram": 9129987,
+        "tiktok": 1800000
+      },
+      "🌾 Ana Castela": {
+        "spotify": 12647334,
+        "deezer": 1338077,
+        "youtube": 8000000,
+        "instagram": 23600000,
+        "tiktok": 16700000
+      },
+      "🎶 Manu Bahtidão": {
+        "spotify": 3279663,
+        "deezer": 177258,
+        "youtube": 2500000,
+        "instagram": 5000000,
+        "tiktok": 3500000
+      },
+      "🌺 Fafá de Belém": {
+        "spotify": 1156551,
+        "deezer": 65926,
+        "youtube": 0,
+        "instagram": 1000000,
+        "tiktok": 0
+      },
+      "💎 Gaby Amarantos": {
+        "spotify": 448607,
+        "deezer": 179865,
+        "youtube": 0,
+        "instagram": 1000000,
+        "tiktok": 295000
+      },
+      "🎵 Viviane Batidão": {
+        "spotify": 388662,
+        "deezer": 24990,
+        "youtube": 0,
+        "instagram": 1000000,
+        "tiktok": 463900
+      },
+      "⭐ Zaynara": {
+        "spotify": 175863,
+        "deezer": 2897,
+        "youtube": 0,
+        "instagram": 478000,
+        "tiktok": 304500
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T19:45:42.334353",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1700000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T19:47:05.361216",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T19:48:19.652888",
+    "dados": {
+      "🎤 JOELMA": {
+        "spotify": 713506,
+        "deezer": 196375,
+        "youtube": 1790000,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "🤠 Wesley Safadão": {
+        "spotify": 9813112,
+        "deezer": 4972144,
+        "youtube": 12000000,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "👑 Simone Mendes": {
+        "spotify": 12720687,
+        "deezer": 1034464,
+        "youtube": 4730000,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "✈️  Xand Avião": {
+        "spotify": 7198010,
+        "deezer": 2320971,
+        "youtube": 0,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "☀️  Solange Almeida": {
+        "spotify": 1507526,
+        "deezer": 537544,
+        "youtube": 0,
+        "instagram": 9129987,
+        "tiktok": 1800000
+      },
+      "🌾 Ana Castela": {
+        "spotify": 12647334,
+        "deezer": 1338081,
+        "youtube": 8000000,
+        "instagram": 23600000,
+        "tiktok": 16700000
+      },
+      "🎶 Manu Bahtidão": {
+        "spotify": 3279663,
+        "deezer": 177258,
+        "youtube": 2500000,
+        "instagram": 5000000,
+        "tiktok": 3500000
+      },
+      "🌺 Fafá de Belém": {
+        "spotify": 1156551,
+        "deezer": 65926,
+        "youtube": 0,
+        "instagram": 1000000,
+        "tiktok": 0
+      },
+      "💎 Gaby Amarantos": {
+        "spotify": 448607,
+        "deezer": 179865,
+        "youtube": 0,
+        "instagram": 1000000,
+        "tiktok": 294900
+      },
+      "🎵 Viviane Batidão": {
+        "spotify": 388662,
+        "deezer": 24990,
+        "youtube": 0,
+        "instagram": 1000000,
+        "tiktok": 500000
+      },
+      "⭐ Zaynara": {
+        "spotify": 175863,
+        "deezer": 2897,
+        "youtube": 0,
+        "instagram": 478000,
+        "tiktok": 304500
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T19:50:57.106145",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1700000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T19:52:16.554168",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T19:56:08.082669",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864066,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39963840,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40058739,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075704,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9129987,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T19:57:31.713050",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864414,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39964048,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40059611,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10076000,
+        "tiktok": 1100000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130311,
+        "tiktok": 1700000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T20:01:26.328319",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864418,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39964058,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40059619,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075997,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130320,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T20:02:48.565477",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864424,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39964061,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40059624,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10075998,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130320,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T20:03:19.831641",
+    "dados": {
+      "🎤 JOELMA": {
+        "spotify": 713506,
+        "deezer": 196375,
+        "youtube": 1790000,
+        "instagram": 5864423,
+        "tiktok": 2900000
+      },
+      "🤠 Wesley Safadão": {
+        "spotify": 9813112,
+        "deezer": 4972151,
+        "youtube": 12000000,
+        "instagram": 39964061,
+        "tiktok": 6200000
+      },
+      "👑 Simone Mendes": {
+        "spotify": 12720687,
+        "deezer": 1034469,
+        "youtube": 4730000,
+        "instagram": 40059624,
+        "tiktok": 17600000
+      },
+      "✈️  Xand Avião": {
+        "spotify": 7198010,
+        "deezer": 2320973,
+        "youtube": 0,
+        "instagram": 10075998,
+        "tiktok": 1200000
+      },
+      "☀️  Solange Almeida": {
+        "spotify": 1507526,
+        "deezer": 537545,
+        "youtube": 0,
+        "instagram": 9130320,
+        "tiktok": 1800000
+      },
+      "🌾 Ana Castela": {
+        "spotify": 12647334,
+        "deezer": 1338086,
+        "youtube": 8000000,
+        "instagram": 24081851,
+        "tiktok": 16700000
+      },
+      "🎶 Manu Bahtidão": {
+        "spotify": 3279663,
+        "deezer": 177258,
+        "youtube": 2500000,
+        "instagram": 5400358,
+        "tiktok": 3500000
+      },
+      "🌺 Fafá de Belém": {
+        "spotify": 1156551,
+        "deezer": 65926,
+        "youtube": 0,
+        "instagram": 1272870,
+        "tiktok": 0
+      },
+      "💎 Gaby Amarantos": {
+        "spotify": 448607,
+        "deezer": 179865,
+        "youtube": 0,
+        "instagram": 1169941,
+        "tiktok": 294900
+      },
+      "🎵 Viviane Batidão": {
+        "spotify": 388662,
+        "deezer": 24990,
+        "youtube": 0,
+        "instagram": 1142385,
+        "tiktok": 463900
+      },
+      "⭐ Zaynara": {
+        "spotify": 175863,
+        "deezer": 2897,
+        "youtube": 0,
+        "instagram": 477869,
+        "tiktok": 304500
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T20:15:18.865534",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864437,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39964084,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40059672,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10076011,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130334,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T20:16:39.690763",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864440,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39964092,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40059684,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10076010,
+        "tiktok": 1100000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130339,
+        "tiktok": 136700
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T20:22:18.471933",
+    "dados": {
+      "JOELMA": {
+        "spotify": 713506,
+        "instagram": 5864449,
+        "tiktok": 2900000
+      },
+      "Wesley Safadão": {
+        "spotify": 9813112,
+        "instagram": 39964089,
+        "tiktok": 6200000
+      },
+      "Simone Mendes": {
+        "spotify": 12720687,
+        "instagram": 40059688,
+        "tiktok": 17600000
+      },
+      "Xand Avião": {
+        "spotify": 7198010,
+        "instagram": 10076014,
+        "tiktok": 1200000
+      },
+      "Solange Almeida": {
+        "spotify": 1507526,
+        "instagram": 9130345,
+        "tiktok": 1800000
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T20:23:31.005956",
+    "dados": {
+      "🎤 JOELMA": {
+        "spotify": 713506,
+        "deezer": 196376,
+        "youtube": 1790000,
+        "instagram": 5864449,
+        "tiktok": 2900000
+      },
+      "🤠 Wesley Safadão": {
+        "spotify": 9813112,
+        "deezer": 4972161,
+        "youtube": 12000000,
+        "instagram": 39964091,
+        "tiktok": 6200000
+      },
+      "👑 Simone Mendes": {
+        "spotify": 12720687,
+        "deezer": 1034475,
+        "youtube": 4730000,
+        "instagram": 40059690,
+        "tiktok": 17600000
+      },
+      "✈️  Xand Avião": {
+        "spotify": 7198010,
+        "deezer": 2320978,
+        "youtube": 0,
+        "instagram": 10076014,
+        "tiktok": 1100000
+      },
+      "☀️  Solange Almeida": {
+        "spotify": 1507526,
+        "deezer": 537546,
+        "youtube": 0,
+        "instagram": 9130346,
+        "tiktok": 1800000
+      },
+      "🌾 Ana Castela": {
+        "spotify": 12647334,
+        "deezer": 1338100,
+        "youtube": 8000000,
+        "instagram": 24082234,
+        "tiktok": 16700000
+      },
+      "🎶 Manu Bahtidão": {
+        "spotify": 3279663,
+        "deezer": 177258,
+        "youtube": 2500000,
+        "instagram": 5400457,
+        "tiktok": 3500000
+      },
+      "🌺 Fafá de Belém": {
+        "spotify": 1156551,
+        "deezer": 65926,
+        "youtube": 0,
+        "instagram": 1272876,
+        "tiktok": 0
+      },
+      "💎 Gaby Amarantos": {
+        "spotify": 448607,
+        "deezer": 179865,
+        "youtube": 0,
+        "instagram": 1169936,
+        "tiktok": 295000
+      },
+      "🎵 Viviane Batidão": {
+        "spotify": 388662,
+        "deezer": 24990,
+        "youtube": 0,
+        "instagram": 1142387,
+        "tiktok": 463900
+      },
+      "⭐ Zaynara": {
+        "spotify": 175863,
+        "deezer": 2897,
+        "youtube": 0,
+        "instagram": 477871,
+        "tiktok": 304000
+      }
+    }
+  }
+]

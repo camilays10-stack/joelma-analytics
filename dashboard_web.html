@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>🎤 Joelma Digital Strategy — Dashboard 5 Plataformas</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+/* ═══════════════ RESET & VARIÁVEIS ═══════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  /* fundos */
+  --bg:#0d0d1a;
+  --card:#151525;
+  --card2:#1c1c32;
+  --card3:#222238;
+  /* bordas */
+  --border:#2e2e52;
+  --border2:#3a3a60;
+  /* cores das plataformas */
+  --sp:#1db954;
+  --dz:#ef5466;
+  --yt:#ff4444;
+  --ig:#e1306c;
+  --tt:#00cfff;
+  /* UI */
+  --yellow:#f5c518;
+  --gold:#e0a800;
+  --cyan:#00cfff;
+  --green:#22e87a;
+  --red:#ff5252;
+  --orange:#ff9500;
+  --purple:#a78bfa;
+  /* texto */
+  --text:#f0f0fa;
+  --text2:#c8c8e8;
+  --muted:#8080a8;
+  --r:12px;
+}
+
+/* ═══════════════ BASE ═══════════════ */
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Segoe UI','Inter',system-ui,sans-serif;
+  min-height:100vh;
+  line-height:1.5;
+}
+a{color:var(--yellow);text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+/* fundo decorativo */
+body::before{
+  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 70% 40% at 5% 0%,rgba(245,197,24,.08) 0%,transparent 60%),
+    radial-gradient(ellipse 50% 50% at 95% 100%,rgba(167,139,250,.06) 0%,transparent 60%);
+}
+.wrap{max-width:1600px;margin:0 auto;padding:0 24px 80px;position:relative;z-index:1;}
+
+/* ═══════════════ HEADER ═══════════════ */
+header{
+  padding:28px 0 22px;
+  display:flex;align-items:center;justify-content:space-between;
+  border-bottom:2px solid var(--border2);
+  flex-wrap:wrap;gap:16px;
+  margin-bottom:4px;
+}
+.hd-left{display:flex;align-items:center;gap:16px;}
+.logo{
+  width:56px;height:56px;
+  background:linear-gradient(135deg,var(--yellow),var(--gold));
+  border-radius:14px;display:flex;align-items:center;justify-content:center;
+  font-size:28px;box-shadow:0 0 28px rgba(245,197,24,.4);flex-shrink:0;
+}
+.hd-title h1{
+  font-size:22px;font-weight:800;
+  background:linear-gradient(90deg,var(--yellow) 0%,#fff 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hd-title p{font-size:13px;color:var(--text2);margin-top:3px;}
+.hd-right{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.live-badge{
+  display:flex;align-items:center;gap:8px;
+  background:rgba(34,232,122,.12);border:1px solid rgba(34,232,122,.35);
+  padding:7px 16px;border-radius:100px;font-size:12px;font-weight:700;color:var(--green);
+}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--green);
+  animation:pulse 1.5s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.5)}}
+.btn{
+  background:var(--card2);border:1px solid var(--border2);color:var(--text);
+  padding:8px 18px;border-radius:10px;cursor:pointer;font-size:13px;font-weight:600;
+  transition:all .2s;display:flex;align-items:center;gap:8px;
+}
+.btn:hover{background:var(--card3);border-color:var(--yellow);}
+.spinning{animation:spin .5s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg)}}
+#ts{font-size:12px;color:var(--muted);}
+
+/* ═══════════════ CHIPS FILTRO ═══════════════ */
+.plat-chips{display:flex;gap:10px;margin:20px 0 0;flex-wrap:wrap;}
+.chip{
+  padding:6px 16px;border-radius:100px;font-size:12px;font-weight:700;
+  cursor:pointer;transition:all .2s;border:2px solid transparent;
+  opacity:.65;
+}
+.chip.active,.chip:hover{opacity:1;transform:scale(1.04);}
+.chip-all {background:rgba(255,255,255,.08);color:var(--text);  border-color:rgba(255,255,255,.2);}
+.chip-sp  {background:rgba(29,185,84,.15); color:var(--sp);   border-color:rgba(29,185,84,.35);}
+.chip-dz  {background:rgba(239,84,102,.15);color:var(--dz);   border-color:rgba(239,84,102,.35);}
+.chip-yt  {background:rgba(255,68,68,.12); color:var(--yt);   border-color:rgba(255,68,68,.3);}
+.chip-ig  {background:rgba(225,48,108,.15);color:var(--ig);   border-color:rgba(225,48,108,.35);}
+.chip-tt  {background:rgba(0,207,255,.12); color:var(--tt);   border-color:rgba(0,207,255,.3);}
+
+/* ═══════════════ TÍTULO DE SEÇÃO ═══════════════ */
+.sec{
+  font-size:13px;font-weight:800;letter-spacing:.8px;
+  color:var(--text2);text-transform:uppercase;
+  margin:36px 0 16px;
+  display:flex;align-items:center;gap:12px;
+}
+.sec::after{content:'';flex:1;height:1px;background:var(--border2);}
+
+/* ═══════════════ JOELMA HERO ═══════════════ */
+.hero{
+  background:linear-gradient(135deg,rgba(245,197,24,.12) 0%,rgba(232,168,0,.06) 50%,rgba(167,139,250,.04) 100%);
+  border:2px solid rgba(245,197,24,.3);
+  border-radius:var(--r);padding:28px 32px;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'🎤';position:absolute;right:24px;top:50%;transform:translateY(-50%);
+  font-size:80px;opacity:.08;pointer-events:none;
+}
+.hero-head{display:flex;align-items:center;gap:14px;margin-bottom:22px;flex-wrap:wrap;}
+.hero-head h2{font-size:22px;font-weight:900;color:var(--yellow);}
+.hero-badge{
+  background:rgba(245,197,24,.18);border:1px solid rgba(245,197,24,.4);
+  color:var(--yellow);padding:4px 12px;border-radius:100px;
+  font-size:11px;font-weight:800;letter-spacing:.5px;
+}
+.hero-metrics{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;}
+.hm{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:10px;padding:16px 18px;
+}
+.hm:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.2);}
+.hm .plat{
+  font-size:11px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;
+  margin-bottom:8px;display:flex;align-items:center;gap:6px;
+}
+.hm .val{font-size:24px;font-weight:900;letter-spacing:-1px;line-height:1;}
+.hm .sub{font-size:11px;color:var(--text2);margin-top:4px;}
+.col-sp .plat{color:var(--sp);} .col-sp .val{color:var(--sp);}
+.col-dz .plat{color:var(--dz);} .col-dz .val{color:var(--dz);}
+.col-yt .plat{color:var(--yt);} .col-yt .val{color:var(--yt);}
+.col-ig .plat{color:var(--ig);} .col-ig .val{color:var(--ig);}
+.col-tt .plat{color:var(--tt);} .col-tt .val{color:var(--tt);}
+
+/* ═══════════════ TABELAS ═══════════════ */
+.tw{
+  background:var(--card);
+  border:2px solid var(--border2);
+  border-radius:var(--r);
+  overflow-x:auto;
+  width:100%;
+}
+table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:13px;
+  white-space:nowrap;
+}
+thead tr{background:var(--card2);}
+thead th{
+  padding:14px 18px;
+  text-align:right;
+  font-size:11px;font-weight:800;
+  color:var(--text2);
+  letter-spacing:.5px;text-transform:uppercase;
+  border-bottom:2px solid var(--border2);
+  border-right:1px solid var(--border);
+}
+thead th:first-child{text-align:left;}
+thead th:last-child{border-right:none;}
+tbody tr{
+  border-bottom:1px solid var(--border);
+  transition:background .15s;
+}
+tbody tr:hover{background:rgba(255,255,255,.04);}
+tbody tr:last-child{border-bottom:none;}
+tbody tr.hl{background:rgba(245,197,24,.06);}
+tbody tr.hl:hover{background:rgba(245,197,24,.1);}
+td{
+  padding:14px 18px;
+  vertical-align:middle;
+  border-right:1px solid rgba(255,255,255,.04);
+  color:var(--text);
+}
+td:not(:first-child){text-align:right;}
+td:last-child{border-right:none;}
+
+/* célula de artista */
+.ac{display:flex;align-items:center;gap:12px;}
+.em{font-size:22px;line-height:1;}
+.an{font-weight:700;font-size:14px;color:var(--text);}
+.ag{font-size:11px;color:var(--muted);margin-top:2px;}
+.star-txt{color:var(--yellow);margin-right:2px;}
+
+/* números nas células */
+.num{font-weight:800;font-size:14px;}
+.n-sp{color:#4ade80;}   /* verde mais claro */
+.n-dz{color:#f87171;}   /* vermelho claro */
+.n-yt{color:#fb923c;}   /* laranja */
+.n-ig{color:#f472b6;}   /* rosa */
+.n-tt{color:var(--tt);} /* cyan */
+
+/* barra mini */
+.bm{height:4px;border-radius:4px;background:rgba(255,255,255,.1);margin-top:5px;overflow:hidden;min-width:60px;}
+.bf{height:100%;border-radius:4px;transition:width .8s ease;}
+
+/* etiqueta grupo */
+.grup-lbl{
+  font-size:10px;font-weight:700;padding:2px 8px;border-radius:6px;
+  margin-top:3px;display:inline-block;
+}
+.g-nacional{background:rgba(0,207,255,.15);color:var(--cyan);}
+.g-paraense{background:rgba(34,232,122,.15);color:var(--green);}
+
+/* status célula */
+.status-cell{font-size:11px;color:var(--text2);}
+
+/* ═══════════════ CARDS DE CHARTS ═══════════════ */
+.cg5{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
+.cg2{display:grid;grid-template-columns:3fr 2fr;gap:16px;}
+.cg3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.cc{
+  background:var(--card);
+  border:2px solid var(--border2);
+  border-radius:var(--r);
+  padding:20px;
+}
+.cc h3{
+  font-size:12px;font-weight:800;
+  color:var(--text2);
+  text-transform:uppercase;letter-spacing:.6px;
+  margin-bottom:16px;
+  display:flex;align-items:center;gap:8px;
+}
+.ch{position:relative;height:220px;}
+.ch-lg{height:290px;}
+
+/* ═══════════════ RANKINGS ═══════════════ */
+.rk-list{list-style:none;padding:0;}
+.rk-item{
+  display:flex;align-items:center;gap:10px;
+  padding:9px 0;
+  border-bottom:1px solid var(--border);
+}
+.rk-item:last-child{border:none;}
+.rk-pos{font-size:18px;font-weight:900;min-width:30px;text-align:center;}
+.rk-em{font-size:18px;}
+.rk-n{font-size:13px;font-weight:700;color:var(--text);flex:1;}
+.rk-n.joelma-name{color:var(--yellow);}
+.rk-v{font-size:13px;font-weight:800;}
+.rk-item.rk-joelma{
+  background:rgba(245,197,24,.08);
+  border-radius:8px;
+  padding:9px 8px;
+  margin:2px -8px;
+}
+
+/* ═══════════════ VS CARDS ═══════════════ */
+.vs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.vs-card{
+  background:var(--card);
+  border:2px solid var(--border2);
+  border-radius:var(--r);
+  padding:18px;
+}
+.vs-card:hover{border-color:var(--border2);background:var(--card2);}
+.vs-nm{
+  font-size:14px;font-weight:800;margin-bottom:14px;
+  display:flex;align-items:center;gap:9px;
+  color:var(--text);
+  padding-bottom:10px;
+  border-bottom:1px solid var(--border2);
+}
+.vs-row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:7px 0;
+  border-bottom:1px solid rgba(255,255,255,.06);
+  font-size:12px;
+}
+.vs-row:last-child{border:none;}
+.vp{color:var(--text2);font-weight:700;}
+.va-a{color:var(--green);font-weight:800;}
+.va-b{color:var(--red);font-weight:800;}
+.va-e{color:var(--muted);font-weight:600;}
+
+/* ═══════════════ CARDS ANÁLISE ═══════════════ */
+.analise-card{
+  background:var(--card);
+  border:2px solid var(--border2);
+  border-radius:var(--r);
+  padding:20px;
+}
+.analise-card h3{
+  font-size:13px;font-weight:800;margin-bottom:12px;
+  display:flex;align-items:center;gap:8px;
+}
+.analise-card p{font-size:13px;color:var(--text2);line-height:1.7;}
+.analise-card p strong{color:var(--text);}
+
+/* ═══════════════ FOOTER ═══════════════ */
+footer{
+  margin-top:56px;padding-top:24px;
+  border-top:2px solid var(--border2);
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:12px;color:var(--text2);
+  flex-wrap:wrap;gap:10px;
+}
+
+/* ═══════════════ TOAST ═══════════════ */
+#toast{
+  position:fixed;bottom:24px;right:24px;z-index:9999;
+  background:var(--card2);border:2px solid var(--border2);
+  color:var(--text);padding:12px 22px;border-radius:12px;
+  font-size:13px;font-weight:700;
+  transform:translateY(60px);opacity:0;transition:all .3s ease;
+  box-shadow:0 8px 32px rgba(0,0,0,.4);
+}
+#toast.show{transform:translateY(0);opacity:1;}
+
+/* ═══════════════ RESPONSIVE ═══════════════ */
+@media(max-width:1200px){
+  .cg5{grid-template-columns:repeat(3,1fr);}
+  .vs-grid{grid-template-columns:repeat(2,1fr);}
+  .hero-metrics{grid-template-columns:repeat(3,1fr);}
+}
+@media(max-width:900px){
+  .cg5{grid-template-columns:repeat(2,1fr);}
+  .cg2,.cg3{grid-template-columns:1fr;}
+  .vs-grid{grid-template-columns:1fr 1fr;}
+  .hero-metrics{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:600px){
+  .cg5{grid-template-columns:1fr;}
+  .vs-grid{grid-template-columns:1fr;}
+  .hero-metrics{grid-template-columns:1fr;}
+  .wrap{padding:0 12px 60px;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ══ HEADER ════════════════════════════════════════════════ -->
+<header>
+  <div class="hd-left">
+    <div class="logo">🎤</div>
+    <div class="hd-title">
+      <h1>Joelma Digital Strategy</h1>
+      <p>Dashboard em Tempo Real · Spotify · Deezer · YouTube · Instagram · TikTok · São João 2026</p>
+    </div>
+  </div>
+  <div class="hd-right">
+    <div class="live-badge"><div class="dot"></div> AO VIVO</div>
+    <span id="ts">Carregando...</span>
+    <button class="btn" onclick="loadData()"><span id="si">↻</span> Atualizar</button>
+  </div>
+</header>
+
+<!-- ══ CHIPS ══════════════════════════════════════════════════ -->
+<div class="plat-chips">
+  <div class="chip chip-all active" onclick="filtrar('all')">🔵 Todas as plataformas</div>
+  <div class="chip chip-sp"  onclick="filtrar('sp')">🟣 Spotify</div>
+  <div class="chip chip-dz"  onclick="filtrar('dz')">🎵 Deezer</div>
+  <div class="chip chip-yt"  onclick="filtrar('yt')">▶️ YouTube</div>
+  <div class="chip chip-ig"  onclick="filtrar('ig')">📸 Instagram</div>
+  <div class="chip chip-tt"  onclick="filtrar('tt')">🎵 TikTok</div>
+</div>
+
+<!-- ══ JOELMA HERO ═════════════════════════════════════════════ -->
+<div class="sec">⭐ JOELMA — Foco Principal · Arraiá 30 Anos</div>
+<div class="hero">
+  <div class="hero-head">
+    <h2>🎤 JOELMA</h2>
+    <span class="hero-badge">PROTAGONISTA</span>
+    <span class="hero-badge" id="j-ts" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.15);color:var(--text2);"></span>
+  </div>
+  <div class="hero-metrics">
+    <div class="hm col-sp">
+      <div class="plat">🟣 Spotify</div>
+      <div class="val" id="j-sp">—</div>
+      <div class="sub">ouvintes mensais</div>
+    </div>
+    <div class="hm col-dz">
+      <div class="plat">🎵 Deezer</div>
+      <div class="val" id="j-dz">—</div>
+      <div class="sub">fãs</div>
+    </div>
+    <div class="hm col-yt">
+      <div class="plat">▶️ YouTube</div>
+      <div class="val" id="j-yt">—</div>
+      <div class="sub">inscritos</div>
+    </div>
+    <div class="hm col-ig">
+      <div class="plat">📸 Instagram</div>
+      <div class="val" id="j-ig">—</div>
+      <div class="sub">seguidores</div>
+    </div>
+    <div class="hm col-tt">
+      <div class="plat">🎵 TikTok</div>
+      <div class="val" id="j-tt">—</div>
+      <div class="sub">seguidores</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ TABELA PRINCIPAL ════════════════════════════════════════ -->
+<div class="sec">🏆 Comparativo Completo — 11 Artistas × 5 Plataformas</div>
+<div class="tw">
+  <table id="tbl-main">
+    <thead>
+      <tr>
+        <th style="text-align:left;min-width:180px">Artista</th>
+        <th style="color:#4ade80;min-width:120px">🟣 Spotify<br><small style="font-weight:500">Ouv/mês</small></th>
+        <th style="color:#f87171;min-width:110px">🎵 Deezer<br><small style="font-weight:500">Fãs</small></th>
+        <th style="color:#fb923c;min-width:110px">▶️ YouTube<br><small style="font-weight:500">Inscritos</small></th>
+        <th style="color:#f472b6;min-width:120px">📸 Instagram<br><small style="font-weight:500">Seguidores</small></th>
+        <th style="color:#00cfff;min-width:110px">🎵 TikTok<br><small style="font-weight:500">Seguidores</small></th>
+        <th style="min-width:80px">Grupo</th>
+      </tr>
+    </thead>
+    <tbody id="tbody-main">
+      <tr><td colspan="7" style="text-align:center;padding:48px;color:var(--text2);font-size:14px;">
+        ⏳ Carregando dados...
+      </td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ══ GRÁFICOS 5 PLATAFORMAS ═════════════════════════════════ -->
+<div class="sec">📊 Visualização por Plataforma</div>
+<div class="cg5">
+  <div class="cc">
+    <h3 style="color:var(--sp)">🟣 Spotify — Ouvintes/mês</h3>
+    <div class="ch"><canvas id="c-sp"></canvas></div>
+  </div>
+  <div class="cc">
+    <h3 style="color:var(--dz)">🎵 Deezer — Fãs</h3>
+    <div class="ch"><canvas id="c-dz"></canvas></div>
+  </div>
+  <div class="cc">
+    <h3 style="color:var(--yt)">▶️ YouTube — Inscritos</h3>
+    <div class="ch"><canvas id="c-yt"></canvas></div>
+  </div>
+  <div class="cc">
+    <h3 style="color:var(--ig)">📸 Instagram — Seguidores</h3>
+    <div class="ch"><canvas id="c-ig"></canvas></div>
+  </div>
+  <div class="cc">
+    <h3 style="color:var(--tt)">🎵 TikTok — Seguidores</h3>
+    <div class="ch"><canvas id="c-tt"></canvas></div>
+  </div>
+</div>
+
+<!-- ══ RADAR + CRESCIMENTO ════════════════════════════════════ -->
+<div class="sec">📡 Radar Digital — Joelma vs Concorrentes Nacionais</div>
+<div class="cg2">
+  <div class="cc">
+    <h3>🕸️ Força Digital — % do Líder em Cada Plataforma</h3>
+    <div class="ch ch-lg"><canvas id="c-radar"></canvas></div>
+  </div>
+  <div class="cc">
+    <h3 style="color:var(--ig)">📈 Crescimento Instagram — Esta Sessão</h3>
+    <div class="ch ch-lg"><canvas id="c-growth"></canvas></div>
+  </div>
+</div>
+
+<!-- ══ RANKINGS ═══════════════════════════════════════════════ -->
+<div class="sec">🥇 Rankings por Plataforma</div>
+<div class="cg5">
+  <div class="cc">
+    <h3 style="color:var(--sp)">🟣 Spotify</h3>
+    <ul class="rk-list" id="rk-sp"></ul>
+  </div>
+  <div class="cc">
+    <h3 style="color:var(--dz)">🎵 Deezer</h3>
+    <ul class="rk-list" id="rk-dz"></ul>
+  </div>
+  <div class="cc">
+    <h3 style="color:var(--yt)">▶️ YouTube</h3>
+    <ul class="rk-list" id="rk-yt"></ul>
+  </div>
+  <div class="cc">
+    <h3 style="color:var(--ig)">📸 Instagram</h3>
+    <ul class="rk-list" id="rk-ig"></ul>
+  </div>
+  <div class="cc">
+    <h3 style="color:var(--tt)">🎵 TikTok</h3>
+    <ul class="rk-list" id="rk-tt"></ul>
+  </div>
+</div>
+
+<!-- ══ VS ANÁLISE ══════════════════════════════════════════════ -->
+<div class="sec">⚔️ Joelma vs Concorrentes — Análise Plataforma a Plataforma</div>
+<div class="vs-grid" id="vs-grid">
+  <p style="color:var(--text2);padding:20px;">Carregando...</p>
+</div>
+
+<!-- ══ PARAENSES ══════════════════════════════════════════════ -->
+<div class="sec">🌿 Cantoras Paraenses — Cenário Interno do Pará</div>
+<div class="tw">
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align:left;min-width:180px">Artista</th>
+        <th style="color:#4ade80">🟣 Spotify<br><small>Ouv/mês</small></th>
+        <th style="color:#f87171">🎵 Deezer<br><small>Fãs</small></th>
+        <th style="color:#f472b6">📸 Instagram</th>
+        <th style="color:#00cfff">🎵 TikTok</th>
+        <th>Gênero Musical</th>
+      </tr>
+    </thead>
+    <tbody id="tbody-para">
+      <tr><td colspan="6" style="text-align:center;padding:32px;color:var(--text2);">Carregando...</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ══ ANA CASTELA ════════════════════════════════════════════ -->
+<div class="sec">🌾 Ana Castela — A Boiadeira Nacional</div>
+<div class="tw">
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align:left">Artista</th>
+        <th style="color:#4ade80">🟣 Spotify</th>
+        <th style="color:#f87171">🎵 Deezer</th>
+        <th style="color:#fb923c">▶️ YouTube</th>
+        <th style="color:#f472b6">📸 Instagram</th>
+        <th style="color:#00cfff">🎵 TikTok</th>
+      </tr>
+    </thead>
+    <tbody id="tbody-castela">
+      <tr><td colspan="6" style="padding:24px;color:var(--text2);">Carregando...</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ══ ANÁLISE ESTRATÉGICA ════════════════════════════════════ -->
+<div class="sec">🧠 Análise Estratégica — Especialista Digital</div>
+<div class="cg3" id="analise-grid">
+  <p style="color:var(--text2);">Carregando...</p>
+</div>
+
+<!-- ══ FOOTER ════════════════════════════════════════════════ -->
+<footer>
+  <div>🎤 <strong>Joelma Digital Strategy</strong> · São João 2026</div>
+  <div>Auto-atualiza a cada 60s · <a href="historico_metricas.json" target="_blank">📥 Exportar JSON</a></div>
+  <div>Última: <strong id="ft-ts">—</strong></div>
+</footer>
+</div>
+
+<div id="toast">✅ Dados atualizados!</div>
+
+<!-- ══ JAVASCRIPT ══════════════════════════════════════════════ -->
+<script>
+// ── CONFIG ────────────────────────────────────────────────────
+const META = {
+  '🎤 JOELMA':          {em:'🎤', cor:'#f5c518', grp:'joelma',   dest:true},
+  '🤠 Wesley Safadão':  {em:'🤠', cor:'#00cfff', grp:'nacional', dest:false},
+  '👑 Simone Mendes':   {em:'👑', cor:'#ff3dce', grp:'nacional', dest:false},
+  '✈️  Xand Avião':     {em:'✈️', cor:'#a78bfa', grp:'nacional', dest:false},
+  '☀️  Solange Almeida':{em:'☀️', cor:'#22e87a', grp:'nacional', dest:false},
+  '🌾 Ana Castela':     {em:'🌾', cor:'#ff9500', grp:'nacional', dest:false},
+  '🎶 Manu Bahtidão':   {em:'🎶', cor:'#e040fb', grp:'paraense', dest:false},
+  '🌺 Fafá de Belém':   {em:'🌺', cor:'#ff6e40', grp:'paraense', dest:false},
+  '💎 Gaby Amarantos':  {em:'💎', cor:'#40c4ff', grp:'paraense', dest:false},
+  '🎵 Viviane Batidão': {em:'🎵', cor:'#69f0ae', grp:'paraense', dest:false},
+  '⭐ Zaynara':          {em:'⭐', cor:'#ffd740', grp:'paraense', dest:false},
+};
+const ALL     = Object.keys(META);
+const NACS    = ALL.filter(n => META[n].grp !== 'paraense');
+const PARAENSES = ALL.filter(n => META[n].grp === 'paraense' || META[n].dest);
+const PLATS   = ['spotify','deezer','youtube','instagram','tiktok'];
+const P_LABEL = {spotify:'Spotify',deezer:'Deezer',youtube:'YouTube',instagram:'Instagram',tiktok:'TikTok'};
+const P_COLOR = {spotify:'#4ade80',deezer:'#f87171',youtube:'#fb923c',instagram:'#f472b6',tiktok:'#00cfff'};
+const GENEROS = {
+  '🎤 JOELMA':'Calypso / Forró', '🎶 Manu Bahtidão':'Tecnomelody / Sertanejo',
+  '🌺 Fafá de Belém':'MPB / Carimbó', '💎 Gaby Amarantos':'Pop / Tecnobrega',
+  '🎵 Viviane Batidão':'Tecnomelody', '⭐ Zaynara':'Beat Melody',
+};
+
+// dados base — fallback quando JSON não tem o valor
+const BASE = {
+  '🎤 JOELMA':          {spotify:713506,   deezer:196376,  youtube:1790000,  instagram:5864449,  tiktok:2900000},
+  '🤠 Wesley Safadão':  {spotify:9813112,  deezer:4972161, youtube:12000000, instagram:39964091, tiktok:6200000},
+  '👑 Simone Mendes':   {spotify:12720687, deezer:1034475, youtube:4730000,  instagram:40059690, tiktok:17600000},
+  '✈️  Xand Avião':     {spotify:7198010,  deezer:2320978, youtube:0,        instagram:10076014, tiktok:1100000},
+  '☀️  Solange Almeida':{spotify:1507526,  deezer:537546,  youtube:0,        instagram:9130346,  tiktok:1800000},
+  '🌾 Ana Castela':     {spotify:12647334, deezer:1338100, youtube:8000000,  instagram:24082234, tiktok:16700000},
+  '🎶 Manu Bahtidão':   {spotify:3279663,  deezer:177258,  youtube:2500000,  instagram:5400457,  tiktok:3500000},
+  '🌺 Fafá de Belém':   {spotify:1156551,  deezer:65926,   youtube:0,        instagram:1272876,  tiktok:0},
+  '💎 Gaby Amarantos':  {spotify:448607,   deezer:179865,  youtube:0,        instagram:1169941,  tiktok:295000},
+  '🎵 Viviane Batidão': {spotify:388662,   deezer:24990,   youtube:0,        instagram:1142387,  tiktok:463900},
+  '⭐ Zaynara':          {spotify:175863,   deezer:2897,    youtube:0,        instagram:477871,   tiktok:304000},
+};
+
+let CHARTS = {}, hist = [];
+
+// ── HELPERS ───────────────────────────────────────────────────
+function fmt(n, ex=false){
+  if(!n && n!==0) return '—';
+  n = parseInt(n);
+  if(!n) return '—';
+  if(ex) return n.toLocaleString('pt-BR');
+  if(n >= 1e6) return (n/1e6).toFixed(2).replace('.',',') + ' M';
+  if(n >= 1e3) return (n/1e3).toFixed(0) + ' K';
+  return String(n);
+}
+function fmtE(n){ return n ? parseInt(n).toLocaleString('pt-BR') : '—'; }
+function dv(nome, plat){
+  const ult = hist.length ? hist[hist.length-1] : null;
+  if(!ult) return BASE[nome]?.[plat] || 0;
+  return ult.dados?.[nome]?.[plat] || BASE[nome]?.[plat] || 0;
+}
+function showToast(m='✅ Atualizado!'){
+  const t = document.getElementById('toast');
+  t.textContent = m; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+// ── LOAD DATA ──────────────────────────────────────────────────
+async function loadData(){
+  const si = document.getElementById('si');
+  si.classList.add('spinning');
+  try{
+    const r = await fetch('historico_metricas.json?t=' + Date.now());
+    if(!r.ok) throw new Error('HTTP ' + r.status);
+    hist = await r.json();
+    if(!hist || !hist.length) throw new Error('vazio');
+    render();
+    showToast('✅ Dados atualizados!');
+  }catch(e){
+    console.warn('Usando dados base:', e.message);
+    hist = [{timestamp: new Date().toISOString(),
+             dados: Object.fromEntries(ALL.map(n => [n, BASE[n]]))}];
+    render();
+    showToast('📋 Usando dados base verificados');
+  }
+  si.classList.remove('spinning');
+}
+
+// ── RENDER PRINCIPAL ───────────────────────────────────────────
+function render(){
+  const ult = hist[hist.length - 1];
+  const ts  = (ult.timestamp || '').slice(0,16).replace('T',' ');
+  document.getElementById('ts').textContent    = 'Última: ' + ts;
+  document.getElementById('ft-ts').textContent = ts;
+  document.getElementById('j-ts').textContent  = ts;
+
+  const j = ult.dados?.['🎤 JOELMA'] || BASE['🎤 JOELMA'];
+  document.getElementById('j-sp').textContent = fmtE(j.spotify);
+  document.getElementById('j-dz').textContent = fmtE(j.deezer);
+  document.getElementById('j-yt').textContent = j.youtube ? fmtE(j.youtube) : '—';
+  document.getElementById('j-ig').textContent = fmtE(j.instagram);
+  document.getElementById('j-tt').textContent = j.tiktok  ? fmtE(j.tiktok)  : '—';
+
+  renderTabela(ult);
+  renderBarCharts(ult);
+  renderRadar(ult);
+  renderGrowth();
+  renderRankings(ult);
+  renderVs(ult);
+  renderParaenses(ult);
+  renderCastela(ult);
+  renderAnalise(ult);
+}
+
+// ── TABELA PRINCIPAL ────────────────────────────────────────────
+function renderTabela(ult){
+  const tb = document.getElementById('tbody-main');
+  tb.innerHTML = '';
+  const maxes = {};
+  PLATS.forEach(p => {
+    maxes[p] = Math.max(...ALL.map(n => (ult.dados?.[n]?.[p] || BASE[n]?.[p] || 0)));
+    if(!maxes[p]) maxes[p] = 1;
+  });
+
+  ALL.forEach(nome => {
+    const m = META[nome];
+    const d = ult.dados?.[nome] || BASE[nome] || {};
+
+    const tr = document.createElement('tr');
+    if(m.dest) tr.classList.add('hl');
+
+    const cel = (plat, cls) => {
+      const v = d[plat] || 0;
+      const pct = maxes[plat] ? Math.round(v / maxes[plat] * 100) : 0;
+      return `<td>
+        <div class="num ${cls}">${v ? fmtE(v) : '<span style="color:var(--muted)">—</span>'}</div>
+        ${v ? `<div class="bm"><div class="bf" style="width:${pct}%;background:${P_COLOR[plat]}"></div></div>` : ''}
+      </td>`;
+    };
+
+    const grpTag = m.grp !== 'joelma'
+      ? `<span class="grup-lbl g-${m.grp}">${m.grp}</span>` : '';
+
+    tr.innerHTML = `
+      <td>
+        <div class="ac">
+          <span class="em">${m.em}</span>
+          <div>
+            <div class="an">${m.dest ? '<span class="star-txt">⭐</span> ' : ''}${nome.replace(/^[^\s]+\s/,'')}</div>
+            <div class="ag">${grpTag}</div>
+          </div>
+        </div>
+      </td>
+      ${cel('spotify','n-sp')}
+      ${cel('deezer','n-dz')}
+      ${cel('youtube','n-yt')}
+      ${cel('instagram','n-ig')}
+      ${cel('tiktok','n-tt')}
+      <td class="status-cell">${m.grp !== 'joelma' ? `<span class="grup-lbl g-${m.grp}">${m.grp}</span>` : '<span class="star-txt">⭐</span>'}</td>
+    `;
+    tb.appendChild(tr);
+  });
+}
+
+// ── BAR CHARTS ─────────────────────────────────────────────────
+function renderBarCharts(ult){
+  const labels = ALL.map(n => META[n].em + ' ' + n.replace(/^[^\s]+\s/,''));
+  const cores  = ALL.map(n => META[n].cor);
+  const ID_MAP = {spotify:'c-sp', deezer:'c-dz', youtube:'c-yt', instagram:'c-ig', tiktok:'c-tt'};
+
+  PLATS.forEach(p => {
+    const vals = ALL.map(n => (ult.dados?.[n]?.[p] || BASE[n]?.[p] || 0));
+    const id = ID_MAP[p];
+    if(CHARTS[id]) CHARTS[id].destroy();
+    const ctx = document.getElementById(id)?.getContext('2d');
+    if(!ctx) return;
+    CHARTS[id] = new Chart(ctx, {
+      type:'bar',
+      data:{
+        labels,
+        datasets:[{
+          data:vals,
+          backgroundColor: cores.map(c => c + '30'),
+          borderColor: cores,
+          borderWidth:2, borderRadius:7, borderSkipped:false,
+        }]
+      },
+      options:{
+        responsive:true, maintainAspectRatio:false,
+        plugins:{legend:{display:false},
+          tooltip:{callbacks:{label: c => ' ' + fmt(c.parsed.y, true)}}},
+        scales:{
+          x:{ticks:{color:'#c8c8e8',font:{size:10}},grid:{color:'rgba(255,255,255,.05)'}},
+          y:{ticks:{color:'#c8c8e8',font:{size:10},callback:v=>fmt(v)},
+            grid:{color:'rgba(255,255,255,.07)'}},
+        },
+      },
+    });
+  });
+}
+
+// ── RADAR ──────────────────────────────────────────────────────
+function renderRadar(ult){
+  if(CHARTS['c-radar']) CHARTS['c-radar'].destroy();
+  const ctx = document.getElementById('c-radar')?.getContext('2d');
+  if(!ctx) return;
+  const artists = NACS;
+  const maxes = {};
+  PLATS.forEach(p => {
+    maxes[p] = Math.max(...artists.map(n => (ult.dados?.[n]?.[p] || BASE[n]?.[p] || 0))) || 1;
+  });
+  const ds = artists.map(nome => ({
+    label: META[nome].em + ' ' + nome.replace(/^[^\s]+\s/,''),
+    data: PLATS.map(p => Math.round(((ult.dados?.[nome]?.[p] || BASE[nome]?.[p] || 0) / maxes[p]) * 100)),
+    borderColor: META[nome].cor,
+    backgroundColor: META[nome].cor + '18',
+    borderWidth: nome.includes('JOELMA') ? 3 : 1.5,
+    pointRadius:4, fill: nome.includes('JOELMA'),
+  }));
+  CHARTS['c-radar'] = new Chart(ctx, {
+    type:'radar',
+    data:{labels:['Spotify','Deezer','YouTube','Instagram','TikTok'], datasets:ds},
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{legend:{display:true,position:'bottom',
+        labels:{color:'#f0f0fa',font:{size:11},boxWidth:12,padding:14}}},
+      scales:{r:{
+        ticks:{color:'#8080a8',font:{size:9},backdropColor:'transparent',callback:v=>v+'%'},
+        grid:{color:'rgba(255,255,255,.1)'},
+        pointLabels:{color:'#f0f0fa',font:{size:12,weight:'bold'}},
+        angleLines:{color:'rgba(255,255,255,.1)'},
+        min:0, max:100,
+      }},
+    },
+  });
+}
+
+// ── GROWTH ─────────────────────────────────────────────────────
+function renderGrowth(){
+  if(hist.length < 2) return;
+  const last = hist.slice(-50);
+  const lbs  = last.map(e => (e.timestamp||'').slice(11,16));
+  const names = ['🎤 JOELMA','🌾 Ana Castela','👑 Simone Mendes'];
+  const ds = names.map(n => ({
+    label: META[n].em + ' ' + n.replace(/^[^\s]+\s/,''),
+    data: last.map(e => e.dados?.[n]?.instagram || null),
+    borderColor: META[n].cor, backgroundColor: META[n].cor + '15',
+    fill: n.includes('JOELMA'), tension:.3,
+    borderWidth: n.includes('JOELMA') ? 3 : 1.5,
+    pointRadius:2, spanGaps:true,
+  }));
+  if(CHARTS['c-growth']) CHARTS['c-growth'].destroy();
+  const ctx = document.getElementById('c-growth')?.getContext('2d');
+  if(!ctx) return;
+  CHARTS['c-growth'] = new Chart(ctx, {
+    type:'line', data:{labels:lbs,datasets:ds},
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      interaction:{mode:'index',intersect:false},
+      plugins:{legend:{display:true,position:'top',
+        labels:{color:'#f0f0fa',font:{size:11},boxWidth:10}}},
+      scales:{
+        x:{ticks:{color:'#c8c8e8',font:{size:9}},grid:{color:'rgba(255,255,255,.05)'}},
+        y:{ticks:{color:'#c8c8e8',font:{size:9},callback:v=>fmt(v)},
+          grid:{color:'rgba(255,255,255,.07)'}},
+      },
+    },
+  });
+}
+
+// ── RANKINGS ───────────────────────────────────────────────────
+function renderRankings(ult){
+  const medals = ['🥇','🥈','🥉','④','⑤','⑥','⑦'];
+  const platsMap = {sp:'spotify', dz:'deezer', yt:'youtube', ig:'instagram', tt:'tiktok'};
+  Object.entries(platsMap).forEach(([key,plat]) => {
+    const ul = document.getElementById('rk-' + key);
+    if(!ul) return;
+    const sorted = ALL
+      .map(n => ({n, v:(ult.dados?.[n]?.[plat] || BASE[n]?.[plat] || 0)}))
+      .filter(x => x.v > 0)
+      .sort((a,b) => b.v - a.v);
+    ul.innerHTML = sorted.slice(0,7).map((x,i) => {
+      const m   = META[x.n];
+      const isJ = x.n.includes('JOELMA');
+      return `<li class="rk-item${isJ?' rk-joelma':''}">
+        <span class="rk-pos">${medals[i]||i+1}</span>
+        <span class="rk-em">${m.em}</span>
+        <span class="rk-n${isJ?' joelma-name':''}">${x.n.replace(/^[^\s]+\s/,'')}</span>
+        <span class="rk-v" style="color:${P_COLOR[plat]}">${fmt(x.v)}</span>
+      </li>`;
+    }).join('');
+  });
+}
+
+// ── VS CARDS ───────────────────────────────────────────────────
+function renderVs(ult){
+  const grid = document.getElementById('vs-grid');
+  grid.innerHTML = '';
+  const j = ult.dados?.['🎤 JOELMA'] || BASE['🎤 JOELMA'];
+  const concorrentes = ['🤠 Wesley Safadão','👑 Simone Mendes','✈️  Xand Avião',
+                        '☀️  Solange Almeida','🌾 Ana Castela','🎶 Manu Bahtidão'];
+  concorrentes.forEach(nome => {
+    const m = META[nome];
+    const d = ult.dados?.[nome] || BASE[nome] || {};
+    const rows = PLATS.map(p => {
+      const jv = j[p]||0, cv = d[p]||0;
+      if(!jv || !cv) return `<div class="vs-row"><span class="vp">${P_LABEL[p]}</span><span class="va-e">—</span></div>`;
+      const r = cv/jv;
+      let cls, txt;
+      if(r > 1.05)       {cls='va-b'; txt=`${m.em} ${r.toFixed(1)}× maior`;}
+      else if(jv>cv*1.05){cls='va-a'; txt=`✅ Joelma +${((jv/cv-1)*100).toFixed(0)}%`;}
+      else               {cls='va-e'; txt='≈ igual';}
+      return `<div class="vs-row">
+        <span class="vp">${P_LABEL[p]}</span>
+        <span class="${cls}">${txt}</span>
+      </div>`;
+    }).join('');
+    const div = document.createElement('div');
+    div.className = 'vs-card';
+    div.innerHTML = `<div class="vs-nm">${m.em} <span>${nome.replace(/^[^\s]+\s/,'')}</span></div>${rows}`;
+    grid.appendChild(div);
+  });
+}
+
+// ── PARAENSES ──────────────────────────────────────────────────
+function renderParaenses(ult){
+  const tb = document.getElementById('tbody-para');
+  tb.innerHTML = '';
+  const paraenses = ['🎤 JOELMA','🎶 Manu Bahtidão','🌺 Fafá de Belém',
+                     '💎 Gaby Amarantos','🎵 Viviane Batidão','⭐ Zaynara'];
+  paraenses.forEach(nome => {
+    const m = META[nome];
+    const d = ult.dados?.[nome] || BASE[nome] || {};
+    const tr = document.createElement('tr');
+    if(m.dest) tr.classList.add('hl');
+    tr.innerHTML = `
+      <td>
+        <div class="ac">
+          <span class="em">${m.em}</span>
+          <div>
+            <div class="an">${m.dest?'<span class="star-txt">⭐</span> ':''}${nome.replace(/^[^\s]+\s/,'')}</div>
+          </div>
+        </div>
+      </td>
+      <td><div class="num n-sp">${fmtE(d.spotify)}</div></td>
+      <td><div class="num n-dz">${fmtE(d.deezer)}</div></td>
+      <td><div class="num n-ig">${fmtE(d.instagram)}</div></td>
+      <td><div class="num n-tt">${d.tiktok ? fmtE(d.tiktok) : '<span style="color:var(--muted)">—</span>'}</div></td>
+      <td style="color:var(--text2);font-size:12px;">${GENEROS[nome]||'—'}</td>
+    `;
+    tb.appendChild(tr);
+  });
+}
+
+// ── ANA CASTELA ────────────────────────────────────────────────
+function renderCastela(ult){
+  const tb = document.getElementById('tbody-castela');
+  const m = META['🌾 Ana Castela'];
+  const d = ult.dados?.['🌾 Ana Castela'] || BASE['🌾 Ana Castela'];
+  tb.innerHTML = `<tr>
+    <td><div class="ac"><span class="em">${m.em}</span>
+      <div><div class="an">Ana Castela</div>
+      <div class="ag" style="color:var(--orange)">A Boiadeira · Goiás · Sertanejo</div></div>
+    </div></td>
+    <td><div class="num n-sp">${fmtE(d.spotify)}</div></td>
+    <td><div class="num n-dz">${fmtE(d.deezer)}</div></td>
+    <td><div class="num n-yt">${d.youtube ? fmtE(d.youtube) : '—'}</div></td>
+    <td><div class="num n-ig">${fmtE(d.instagram)}</div></td>
+    <td><div class="num n-tt">${fmtE(d.tiktok)}</div></td>
+  </tr>`;
+}
+
+// ── ANÁLISE ESTRATÉGICA ─────────────────────────────────────────
+function renderAnalise(ult){
+  const grid = document.getElementById('analise-grid');
+  const j = ult.dados?.['🎤 JOELMA'] || BASE['🎤 JOELMA'];
+  const pos = {};
+  PLATS.forEach(p => {
+    const sorted = ALL.map(n=>(ult.dados?.[n]?.[p]||BASE[n]?.[p]||0)).filter(v=>v>0).sort((a,b)=>b-a);
+    pos[p] = sorted.indexOf(j[p]||0)+1 || '—';
+  });
+
+  const insights = [
+    {icon:'🟢', cor:'#22e87a', titulo:'Deezer — Posição '+pos.deezer+'ª',
+     corpo:`Com <strong>${fmtE(j.deezer)} fãs</strong> no Deezer, Joelma está na ${pos.deezer}ª posição entre os 11 artistas.
+     Wesley Safadão lidera com ${fmtE(BASE['🤠 Wesley Safadão'].deezer)} fãs.`},
+    {icon:'🔴', cor:'#ff5252', titulo:'Spotify — Gap Crítico ('+pos.spotify+'ª)',
+     corpo:`<strong>${fmtE(j.spotify)} ouvintes/mês</strong> — na ${pos.spotify}ª posição.
+     Simone Mendes lidera com <strong>${fmtE(BASE['👑 Simone Mendes'].spotify)}</strong>.
+     Recuperar esse gap é a prioridade #1 do streaming.`},
+    {icon:'⭐', cor:'#f5c518', titulo:'Rainha das Paraenses',
+     corpo:`Entre as cantoras paraenses, Joelma lidera em <strong>Instagram (${fmtE(j.instagram)})</strong>
+     e TikTok (${fmtE(j.tiktok)}). No Spotify, Manu Bahtidão supera com ${fmtE(BASE['🎶 Manu Bahtidão'].spotify)}.`},
+    {icon:'📸', cor:'#f472b6', titulo:'Instagram — '+pos.instagram+'ª posição',
+     corpo:`<strong>${fmtE(j.instagram)} seguidores</strong>.
+     Simone (${fmtE(BASE['👑 Simone Mendes'].instagram)}) e Wesley (${fmtE(BASE['🤠 Wesley Safadão'].instagram)}) lideram.
+     Crescimento orgânico confirmado ao vivo nesta sessão.`},
+    {icon:'🎵', cor:'#00cfff', titulo:'TikTok — '+pos.tiktok+'ª posição',
+     corpo:`<strong>${fmtE(j.tiktok)} seguidores</strong> no TikTok.
+     Supera Xand Avião, Solange e todas as paraenses.
+     O bordão <strong>"Alôôôô"</strong> é o maior ativo viral subutilizado.`},
+    {icon:'🎯', cor:'#ff9500', titulo:'Oportunidade — Arraiá 30 Anos',
+     corpo:`Com +20 cidades confirmadas no Arraiá 30 Anos, cada show é oportunidade de crescimento orgânico.
+     Estratégia recomendada: <strong>1 vídeo "Alôôôô [cidade]" por dia</strong> durante a turnê.`},
+  ];
+
+  grid.innerHTML = insights.map(i => `
+    <div class="analise-card" style="border-left:4px solid ${i.cor};">
+      <h3 style="color:${i.cor}">${i.icon} ${i.titulo}</h3>
+      <p>${i.corpo}</p>
+    </div>
+  `).join('');
+}
+
+// ── FILTRO DE COLUNAS ─────────────────────────────────────────
+function filtrar(plat){
+  document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+  document.querySelector('.chip-'+(plat==='all'?'all':plat))?.classList.add('active');
+  // restaura tudo visível primeiro
+  document.querySelectorAll('#tbl-main thead th, #tbl-main tbody td').forEach(el=>{
+    el.style.display='';
+  });
+  if(plat === 'all') return;
+  // esconde colunas que não são a plataforma selecionada
+  const mapa = {sp:1,dz:2,yt:3,ig:4,tt:5};
+  const idx  = mapa[plat];
+  const ths  = document.querySelectorAll('#tbl-main thead th');
+  const rows = document.querySelectorAll('#tbl-main tbody tr');
+  ths.forEach((th,i)=>{
+    if(i !== 0 && i !== idx && i !== 6) th.style.display='none';
+  });
+  rows.forEach(row=>{
+    Array.from(row.cells).forEach((td,i)=>{
+      if(i !== 0 && i !== idx && i !== 6) td.style.display='none';
+    });
+  });
+}
+
+// ── INIT ─────────────────────────────────────────────────────
+loadData();
+setInterval(loadData, 60_000);
+</script>
+</body>
+</html>

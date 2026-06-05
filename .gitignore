@@ -6,3 +6,4 @@ artists_data.json
 venv/
 .venv/
 secrets.toml
+spotify_creds.json
