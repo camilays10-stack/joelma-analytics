@@ -1,0 +1,41 @@
+name: Atualizar dados revistas
+
+on:
+  schedule:
+    # Todo dia às 06:00 UTC = 03:00 BRT
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+    # Permite rodar manualmente pelo GitHub
+
+jobs:
+  coletar:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependências
+        run: pip install requests urllib3
+
+      - name: Rodar coleta de dados
+        run: python coletar_revistas.py
+
+      - name: Commitar histórico atualizado
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add historico_revistas.json
+          if git diff --cached --quiet; then
+            echo "Nenhuma mudança no histórico."
+          else
+            git commit -m "chore: snapshot diário revistas $(date +'%d/%m/%Y')"
+            git push
+          fi

@@ -1,0 +1,55 @@
+[
+  {
+    "timestamp": "2026-06-09T00:41:15Z",
+    "dados": {
+      "Revista Total": {
+        "instagram": 63613,
+        "facebook": 4763,
+        "youtube": 0,
+        "tiktok": 1030
+      },
+      "Caras": {
+        "instagram": 7791261,
+        "facebook": 4869636,
+        "youtube": 72200,
+        "tiktok": 1600000
+      },
+      "Contigo": {
+        "instagram": 1827997,
+        "facebook": 3400000,
+        "youtube": 398000,
+        "tiktok": 633600
+      },
+      "Veja": {
+        "instagram": 2476641,
+        "facebook": 6705913,
+        "youtube": 669000,
+        "tiktok": 0
+      },
+      "IstoÉ": {
+        "instagram": 1115291,
+        "facebook": 2284044,
+        "youtube": 288000,
+        "tiktok": 73300
+      },
+      "Piauí": {
+        "instagram": 927697,
+        "facebook": 455428,
+        "youtube": 0,
+        "tiktok": 37300
+      },
+      "Carta Capital": {
+        "instagram": 1238692,
+        "facebook": 1691650,
+        "youtube": 694000,
+        "tiktok": 9072
+      },
+      "Exame": {
+        "instagram": 3544083,
+        "facebook": 3964083,
+        "youtube": 671000,
+        "tiktok": 302800
+      }
+    }
+  }
+]
