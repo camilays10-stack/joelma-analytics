@@ -83,13 +83,13 @@ h1,h2,h3{color:#FFFFFF;}
 DATA_FILE = os.path.join(os.path.dirname(__file__), "artists_data.json")
 
 DEFAULT_ARTISTS = {
-    # ── JOELMA (dados 100% verificados — Jun/2026) ─────────────────────────
+    # ── JOELMA (dados atualizados — Ago/2026) ──────────────────────────────
     "Joelma": {
         "genero": "Forró / Calypso",
         "estado": "PA",
         "grupo": "🎤 Joelma",
         "cor": COR_JOELMA,
-        "instagram": {"seguidores": 5_864_519, "seguindo": 300, "posts": 1200,
+        "instagram": {"seguidores": 6_000_000, "seguindo": 300, "posts": 1200,
                       "media_curtidas": 38000, "media_comentarios": 900,
                       "media_views_reels": 280000},
         "tiktok": {"seguidores": 2_900_000, "curtidas_total": 0,
@@ -97,7 +97,7 @@ DEFAULT_ARTISTS = {
         "youtube": {"inscritos": 1_803_017, "views_total": 1_500_000_000,
                     "media_views_video": 2_000_000, "videos": 380},
         "spotify":       {"seguidores": 274_793, "ouvintes_mensais": 713_506, "popularidade": 62},
-        "deezer":        {"fans": 196_388, "albuns": 14},
+        "deezer":        {"fans": 197_179, "albuns": 14},
         "apple_music":   {"ouvintes_mensais": 420_000},
         "youtube_music": {"streams_mensais": 1_200_000},
         "amazon_music":  {"streams_mensais": 280_000},
