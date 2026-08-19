@@ -1,6 +1,6 @@
 """
 Busca dados reais de cada artista em paralelo.
-Plataformas suportadas: Deezer (grátis), Spotify (API), YouTube (API).
+Plataformas suportadas: Deezer (grátis), Spotify (API), YouTube (API), Instagram Graph API.
 """
 import requests
 import concurrent.futures
@@ -114,6 +114,68 @@ def _fetch_youtube(name: str, api_key: str) -> dict:
         }
     except Exception as e:
         return {"erro": str(e)}
+
+# ── Instagram Graph API ────────────────────────────────────────────────────────
+_IG_API = "https://graph.facebook.com/v20.0"
+
+def discover_ig_user_id(page_access_token: str) -> dict:
+    """
+    Dado um Page Access Token, retorna o Instagram Business Account ID
+    e o nome da página vinculada. Use para descobrir o ig_user_id pela
+    primeira vez — depois salve em secrets.toml.
+    """
+    try:
+        r = requests.get(
+            f"{_IG_API}/me/accounts",
+            params={
+                "access_token": page_access_token,
+                "fields": "name,instagram_business_account{id,username,followers_count}",
+            },
+            timeout=_TIMEOUT,
+        )
+        r.raise_for_status()
+        pages = r.json().get("data", [])
+        results = []
+        for page in pages:
+            ig = page.get("instagram_business_account", {})
+            if ig.get("id"):
+                results.append({
+                    "page_name":    page.get("name", ""),
+                    "ig_user_id":   ig["id"],
+                    "ig_username":  ig.get("username", ""),
+                    "seguidores":   ig.get("followers_count", 0),
+                })
+        return {"pages": results, "total": len(results)}
+    except Exception as e:
+        return {"erro": str(e)}
+
+
+def fetch_joelma_instagram(ig_user_id: str, access_token: str) -> dict:
+    """Busca dados ao vivo do Instagram Business Account da Joelma."""
+    try:
+        r = requests.get(
+            f"{_IG_API}/{ig_user_id}",
+            params={
+                "fields": "followers_count,media_count,name,username,biography,profile_picture_url",
+                "access_token": access_token,
+            },
+            timeout=_TIMEOUT,
+        )
+        r.raise_for_status()
+        d = r.json()
+        if "error" in d:
+            return {"erro": d["error"].get("message", "Token inválido ou sem permissão")}
+        return {
+            "seguidores": d.get("followers_count", 0),
+            "posts":      d.get("media_count", 0),
+            "nome":       d.get("name", ""),
+            "username":   d.get("username", ""),
+            "url":        f"https://instagram.com/{d.get('username', '')}",
+            "foto":       d.get("profile_picture_url", ""),
+        }
+    except Exception as e:
+        return {"erro": str(e)}
+
 
 # ── Busca de um artista em todas as plataformas ────────────────────────────────
 def fetch_artist(name: str, config: dict) -> dict:

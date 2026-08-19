@@ -8,7 +8,7 @@ import os
 from datetime import datetime
 
 try:
-    from fetcher import fetch_all_parallel, get_spotify_token
+    from fetcher import fetch_all_parallel, get_spotify_token, fetch_joelma_instagram, discover_ig_user_id
     _FETCHER_OK = True
 except Exception:
     _FETCHER_OK = False
@@ -618,6 +618,56 @@ with st.sidebar:
     if "live_timestamp" in st.session_state:
         st.caption(f"Última busca: {st.session_state['live_timestamp']}")
 
+    # ── Instagram da Joelma ────────────────────────────────
+    st.markdown("---")
+    st.markdown("### 📸 Instagram da Joelma")
+    st.caption("Conecte a conta oficial para dados ao vivo")
+
+    _ig_token   = st.secrets.get("instagram", {}).get("access_token", "") if hasattr(st, "secrets") else ""
+    _ig_user_id = st.secrets.get("instagram", {}).get("user_id", "")      if hasattr(st, "secrets") else ""
+
+    with st.expander("🔑 Token do Instagram", expanded=not _ig_token):
+        ig_token   = st.text_input("Page Access Token", value=_ig_token, type="password", key="ig_token")
+        ig_user_id = st.text_input("IG User ID (numérico)", value=_ig_user_id, key="ig_uid",
+                                   help="Deixe em branco para descobrir automaticamente pelo token")
+        st.caption("""**Como obter o token:**
+1. Acesse [developers.facebook.com/tools/explorer](https://developers.facebook.com/tools/explorer)
+2. Selecione seu App Meta → Generate Access Token
+3. Marque: `pages_show_list` + `instagram_basic` + `instagram_manage_insights`
+4. Cole o token acima""")
+
+    if ig_token:
+        if not ig_user_id:
+            if st.button("🔍 Descobrir ID da conta", use_container_width=True):
+                with st.spinner("Buscando páginas vinculadas..."):
+                    res = discover_ig_user_id(ig_token)
+                    if "erro" in res:
+                        st.error(f"Erro: {res['erro']}")
+                    elif res["total"] == 0:
+                        st.warning("Nenhuma conta Instagram Business encontrada. Verifique se a página do Facebook está vinculada ao Instagram.")
+                    else:
+                        for p in res["pages"]:
+                            st.success(f"✅ **{p['ig_username']}** — ID: `{p['ig_user_id']}` · {p['seguidores']:,} seguidores")
+                        st.info("Copie o IG User ID acima e cole no campo 'IG User ID'")
+
+        if ig_user_id:
+            if st.button("📸 Atualizar Joelma agora", type="primary", use_container_width=True):
+                with st.spinner("Buscando dados do Instagram..."):
+                    ig_live = fetch_joelma_instagram(ig_user_id, ig_token)
+                    if "erro" in ig_live:
+                        st.error(f"Erro: {ig_live['erro']}")
+                    else:
+                        seg = ig_live["seguidores"]
+                        data["Joelma"]["instagram"]["seguidores"] = seg
+                        save_data(data)
+                        st.session_state["ig_joelma_live"] = ig_live
+                        st.success(f"✅ Instagram atualizado! {seg:,} seguidores")
+                        st.rerun()
+
+        if "ig_joelma_live" in st.session_state:
+            ig_d = st.session_state["ig_joelma_live"]
+            st.caption(f"📸 @{ig_d.get('username','')} · {ig_d.get('seguidores',0):,} seguidores · {ig_d.get('posts',0):,} posts")
+
     st.markdown("---")
     if st.button("⬇️ Exportar CSV", use_container_width=True):
         rows_exp = []
@@ -705,7 +755,7 @@ for col, val, lbl, ico in cards:
 # ═════════════════════════════════════════════════════════
 # TABS
 # ═════════════════════════════════════════════════════════
-tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9 = st.tabs([
+tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9, tab10 = st.tabs([
     "📊 Comparativo Geral",
     "📸 Instagram",
     "🎵 TikTok",
@@ -715,6 +765,7 @@ tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8, tab9 = st.tabs([
     "🏆 Rankings",
     "👤 Perfil do Artista",
     "🔴 Ao Vivo",
+    "🗓️ Estratégia de Conteúdo",
 ])
 
 # ─────────────────────────────────────────────────────────
@@ -1817,6 +1868,307 @@ with tab9:
                             st.metric("Views Total", fmt(pdata.get("views_total", 0)))
                             if pdata.get("url"):
                                 st.markdown(f"[Abrir canal]({pdata['url']})")
+
+# ─────────────────────────────────────────────────────────
+# TAB 10 — ESTRATÉGIA DE CONTEÚDO
+# ─────────────────────────────────────────────────────────
+with tab10:
+    from datetime import date, timedelta
+
+    SHOW_CUIABA  = date(2026, 9, 5)
+    hoje         = date.today()
+    dias_restant = (SHOW_CUIABA - hoje).days
+
+    st.markdown("## 🗓️ Estratégia de Conteúdo — Joelma")
+    st.markdown(f"**Projeto ativo:** CALYPSOUL CUIABÁ · 5 de Setembro de 2026")
+
+    # ── Contador até o show ───────────────────────────────
+    if dias_restant > 0:
+        cor_urgencia = "#E74C3C" if dias_restant <= 10 else "#E67E22" if dias_restant <= 20 else "#27AE60"
+        st.markdown(f"""
+        <div style='background:#1C2128;border-radius:12px;padding:20px;text-align:center;
+                    border:2px solid {cor_urgencia};margin-bottom:20px'>
+            <div style='font-size:3rem;font-weight:900;color:{cor_urgencia}'>{dias_restant}</div>
+            <div style='font-size:1rem;color:#8B949E'>dias até o CALYPSOUL CUIABÁ</div>
+            <div style='font-size:.85rem;color:#555;margin-top:4px'>5 de setembro de 2026</div>
+        </div>
+        """, unsafe_allow_html=True)
+    else:
+        st.success("🎉 O show aconteceu! Foque em conteúdo de pós-show e remarketing.")
+
+    # ── Fase atual da campanha ───────────────────────────
+    st.markdown("### 📊 Fase Atual da Campanha")
+    if dias_restant > 21:
+        fase_nome, fase_cor, fase_desc = "Fase 2 — Sustentação", "#2471A3", "Nutrir audiência, nostalgia, prova social"
+        budget_rec = "R$460–560/dia total"
+    elif dias_restant > 0:
+        fase_nome, fase_cor, fase_desc = "⚠️ Fase 3 — URGÊNCIA", "#E74C3C", "Escassez, countdown, últimos ingressos"
+        budget_rec = f"R$570–920/dia total · Pico máx. R$300–500/dia só no Meta nos últimos 7 dias"
+    else:
+        fase_nome, fase_cor, fase_desc = "Pós-show", "#27AE60", "Conteúdo de memória, depoimentos, próximos projetos"
+        budget_rec = "Encerrar campanhas de conversão"
+
+    st.markdown(f"""
+    <div style='background:#1C2128;border-radius:10px;padding:16px;border-left:4px solid {fase_cor}'>
+        <b style='color:{fase_cor}'>{fase_nome}</b><br>
+        <span style='color:#CCC'>{fase_desc}</span><br>
+        <span style='color:#8B949E;font-size:.85rem'>Budget recomendado: {budget_rec}</span>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("")
+
+    # ── Seletor de plataforma ────────────────────────────
+    plataforma = st.selectbox("🎯 Plataforma de conteúdo",
+        ["Instagram (Feed + Reels)", "Instagram Stories", "TikTok", "Google/YouTube Ads", "Copy de Anúncio Meta"])
+
+    st.markdown("---")
+
+    # ══════════════════════════════════════════════════════
+    # CONTEÚDO POR PLATAFORMA
+    # ══════════════════════════════════════════════════════
+
+    if plataforma == "Instagram (Feed + Reels)":
+        st.markdown("### 📸 Instagram — Feed & Reels")
+
+        if dias_restant > 21:
+            st.markdown("""
+**🎯 Pilares desta fase (Sustentação):**
+
+| Pilar | Ideia de Conteúdo | Formato |
+|---|---|---|
+| 🕰️ Nostalgia | "Você cresceu ouvindo isso. Agora ouça ao vivo." | Reel c/ música clássica |
+| 📍 Regional | "Cuiabá é o coração do Brasil. E o CALYPSOUL vem bater aqui." | Carrossel |
+| 👥 Prova Social | Prints de comentários + depoimentos de fãs | Reel UGC |
+| ⏳ Countdown | "Faltam [X] dias para o CALYPSOUL" | Story/Reel animado |
+| 🎭 Bastidor | Teasers do show, detalhes do espetáculo | Reel curto |
+
+**📝 Banco de Legendas prontas:**
+
+> "30 anos de carreira. E a maior noite ainda está por vir. CALYPSOUL — 5 de setembro — Cuiabá. Você vai estar lá?"
+
+> "Cuiabá é o centro do Brasil. Quando Joelma chega no centro do Brasil, ela chega em casa. E você vai estar junto? 🎤"
+
+> "Faltam [X] dias. Cada dia que passa é um ingresso a menos disponível. Garanta o seu."
+            """)
+        else:
+            st.markdown(f"""
+**🔴 URGÊNCIA — {dias_restant} dias — Conteúdo prioritário:**
+
+| Formato | Ideia | Hook |
+|---|---|---|
+| Reel 15s | Countdown visual com trilha da Joelma | "Faltam {dias_restant} dias. Cuiabá vai lotar." |
+| Reel 30s | Melhores momentos do São João 2026 | "Você viu o que ela fez no Nordeste? Agora é Cuiabá." |
+| Carrossel | Setores + preços lado a lado | "Escolha onde você quer estar em 5 de setembro" |
+| Reel UGC | Fãs que já compraram ingresso | "Já somos [X] confirmados. Você vai ficar de fora?" |
+| Reels série | "A história do CALYPSOUL" ep. 1, 2, 3 | 1 por dia nos últimos 5 dias |
+
+**📝 Legendas de urgência:**
+
+> "⚠️ CUIABÁ. Faltam **{dias_restant} dias** pro CALYPSOUL. Os melhores setores estão acabando. Garante o seu agora — link na bio."
+
+> "Eu vim de Belém, cruzei o Brasil inteiro, e agora chego no centro. No coração. CUIABÁ. 5 de setembro. Você vem? 🎤"
+
+> "Vixe maria, já faltam só {dias_restant} dias!!! Quem ainda não garantiu o ingresso? Corre — CALYPSOUL tá quase chegando. 🔥"
+            """)
+
+    elif plataforma == "Instagram Stories":
+        st.markdown("### 📱 Instagram Stories")
+
+        st.markdown(f"""
+**Sequência diária recomendada (dias restantes: {dias_restant}):**
+
+**Story 1 — Abertura**
+> 📍 [nome da cidade] · Faltam {dias_restant} dias · [sticker de countdown]
+
+**Story 2 — Urgência visual**
+> Arte com o setor mais barato disponível + preço em destaque
+> Botão link: "Comprar agora →"
+
+**Story 3 — Prova Social**
+> Print de comentário de fã ou depoimento de quem já comprou
+> Texto: "Já tem gente confirmada. E você?"
+
+**Story 4 — Emotional hook**
+> Vídeo ou foto de show anterior (São João 2026 ou Arraiá)
+> Texto: "Isso foi no São João. O que vai acontecer no CALYPSOUL vai ser ainda maior."
+
+**Story 5 — CTA direto**
+> Fundo escuro, texto grande, link
+> "5 SET · CUIABÁ · CALYPSOUL · Ingresso na bio"
+
+---
+**Enquetes que geram engajamento:**
+- "Você vai ao CALYPSOUL?" → Sim 🔥 / Ainda não garantei 😬
+- "Qual setor você prefere?" → VIP / Frontstage / Camarote / Bangalô
+- "Você já foi a um show da Joelma?" → Sim, várias vezes / Sim, uma vez / Nunca fui mas vou agora!
+        """)
+
+    elif plataforma == "TikTok":
+        st.markdown("### 🎵 TikTok — Conteúdo de Urgência")
+
+        st.markdown(f"""
+**Formatos de maior performance para shows ({dias_restant} dias):**
+
+| Formato | Descrição | Duração |
+|---|---|---|
+| Take puro | Melhor momento do São João 2026 com áudio de mesa | 15–30s |
+| POV | "POV: você vai ao CALYPSOUL em Cuiabá" | 15s |
+| Countdown | "Faltam {dias_restant} dias pra Joelma em Cuiabá 🔥" | 7–10s |
+| Dueto | Joelma reage a fã dançando calypso | 30s |
+| "Qual Joelma você é?" | Teste com as 10 eras do CALYPSOUL | 30–45s |
+| Bastidor CALYPSOUL | Teaser de produção do show | 30s |
+
+**Hook dos primeiros 3 segundos (copiar e colar):**
+> "Cuiabá, vocês sabem o que vem aí em 5 de setembro?"
+> "Se você é fã da Joelma, esse vídeo é pra você..."
+> "Faltam {dias_restant} dias. E ainda tem ingresso disponível. Por quanto tempo mais?"
+
+**Legendas TikTok:**
+> Sem filtro. Sem playback. Só Joelma. CALYPSOUL — 5/9 — Cuiabá 🎤🔥 #Joelma #Calypsoul #Cuiabá #Forró
+
+**Hashtags recomendadas:**
+`#Joelma` `#CalypSoul` `#Cuiabá` `#MatoGrosso` `#ForróBrasileiro` `#Show2026` `#BandaCalypso`
+        """)
+
+    elif plataforma == "Google/YouTube Ads":
+        st.markdown("### 🔍 Google Ads — Fase Urgência")
+
+        st.markdown(f"""
+**Search — Palavras-chave ativas:**
+```
+[ingresso joelma cuiabá]          → Exata — maior intenção
+[calypsoul cuiabá]                → Exata
+"joelma cuiabá setembro 2026"     → Frase
+[último ingresso joelma cuiabá]   → Exata — fase urgência
++joelma +show +cuiabá             → BMM
+[show cuiabá setembro 2026]       → Exata
+```
+
+**Anúncio modelo (urgência):**
+```
+Título 1: ⏰ Últimos Ingressos CALYPSOUL
+Título 2: Joelma Cuiabá · 5 de Setembro
+Título 3: Faltam {dias_restant} Dias · Garanta Já
+Descrição 1: O maior show de Joelma chega ao Coração do Brasil. Setores limitados — não perca!
+Descrição 2: VIP a partir de R$70 meia · Camarote · Bangalô Prata e Ouro disponíveis.
+```
+
+**YouTube Bumper Ads (6s não puláveis):**
+> "5 de setembro. Joelma. Cuiabá. {dias_restant} dias. Garanta seu ingresso."
+
+**Budget Google fase 3:**
+- Search: R$100–150/dia
+- YouTube Bumper: R$60/dia
+- Display remarketing: R$40/dia
+        """)
+
+    else:  # Copy de Anúncio Meta
+        st.markdown("### 📣 Copies de Anúncio — Meta Ads")
+
+        st.markdown(f"""
+**FASE 3 — URGÊNCIA ({dias_restant} dias)**
+
+---
+**Copy #1 — Urgência + Escassez (Conversão)**
+> ⚠️ ÚLTIMOS INGRESSOS!
+> O **CALYPSOUL** acontece em **{dias_restant} dias**.
+> Joelma no palco em Cuiabá — 5 de setembro de 2026.
+> Os melhores lugares estão acabando. Garante o seu agora antes que acabe!
+> 🎟️ **[Garantir meu ingresso]**
+
+---
+**Copy #2 — Emocional (Remarketing)**
+> Você viu o São João que a Joelma fez esse ano?
+> 38 dias. 22 cidades. Um Brasil inteiro dançando.
+> Agora ela vem pro Cuiabá — o **coração do Brasil** — para um show diferente de tudo que você já viu.
+> **CALYPSOUL. 5 de setembro. Cuiabá.**
+> Você ainda não garantiu o seu. Por quê?
+> 🔥 **[Quero meu ingresso]**
+
+---
+**Copy #3 — Regional (Público frio MT)**
+> Cuiabá, chegou a sua vez. 🌟
+> **Joelma** — a rainha do calypso, 30 anos de carreira — escolheu o **coração do Brasil** para um dos shows mais épicos de 2026.
+> **CALYPSOUL — 5 de setembro de 2026**
+> Setores: VIP · Frontstage · Camarote Open Bar · Bangalôs
+> Ingressos a partir de **R$70 (meia)**
+> 🎤 **[Ver ingressos disponíveis]**
+
+---
+**Copy #4 — FOMO (Última semana)**
+> Todo Cuiabá vai estar lá.
+> O **CALYPSOUL** é daqui a **{dias_restant} dias**.
+> Você vai ficar de fora?
+> 🔴 **Últimos ingressos disponíveis → [Comprar agora]**
+
+---
+**KPIs para monitorar:**
+| Métrica | Meta Fase 3 | Alerta |
+|---|---|---|
+| CTR | > 2,5% | Pausar se < 0,8% por 3 dias |
+| CPA | < R$50 | Revisar se > R$80 |
+| ROAS | > 3x | Escalar budget se > 8x |
+| Frequência | 5–8x | Rotar criativos se > 10x |
+        """)
+
+    # ── Calendário de conteúdo dos próximos 7 dias ───────
+    st.markdown("---")
+    st.markdown("### 📅 Calendário — Próximos 7 dias")
+
+    planos = {
+        0: ("Urgência máxima", "Countdown + preços visíveis + CTA direto", "⚠️"),
+        1: ("Nostalgia → Cuiabá", "Compilação São João 2026 + 'agora é Cuiabá'", "🎶"),
+        2: ("Prova social", "UGC de fãs + prints de comentários + quem já comprou", "👥"),
+        3: ("Bastidor do show", "Teaser de produção CALYPSOUL — figurinos, palco, equipe", "🎭"),
+        4: ("Regional", "Narrativa 'Cuiabá é o coração do Brasil' — vídeo emocional", "💛"),
+        5: ("Escassez setores", "Carrossel com cada setor + urgência de vagas limitadas", "🎟️"),
+        6: ("Emoção pura", "As 10 eras de Joelma — qual é a sua? — engajamento", "✨"),
+    }
+
+    cols = st.columns(7)
+    for i, col in enumerate(cols):
+        d = hoje + timedelta(days=i)
+        titulo, desc, emoji = planos.get(i, ("—", "—", "📌"))
+        dias_ate_show = (SHOW_CUIABA - d).days
+        borda = "#E74C3C" if dias_ate_show <= 7 else "#E67E22" if dias_ate_show <= 14 else "#2471A3"
+        col.markdown(f"""
+<div style='background:#1C2128;border-radius:8px;padding:10px;border-top:3px solid {borda};min-height:160px'>
+<div style='font-size:.75rem;color:#8B949E'>{d.strftime("%d/%m")}</div>
+<div style='font-size:1.2rem'>{emoji}</div>
+<div style='font-size:.8rem;font-weight:700;color:#FFF;margin:4px 0'>{titulo}</div>
+<div style='font-size:.72rem;color:#8B949E'>{desc}</div>
+<div style='font-size:.7rem;color:{borda};margin-top:6px'>-{dias_ate_show}d</div>
+</div>
+        """, unsafe_allow_html=True)
+
+    # ── Tom de voz — quick reference ─────────────────────
+    st.markdown("---")
+    st.markdown("### ✍️ Tom de Voz da Joelma — Referência Rápida")
+
+    col_sim, col_nao = st.columns(2)
+    with col_sim:
+        st.markdown("""
+**✅ ESCREVER ASSIM:**
+- "CUIABÁ!! Faltam {X} dias e meu coração já tá na estrada."
+- "Vixe maria, isso aqui vai ser do tamanho do Brasil."
+- "O povo de Cuiabá vai cantar mais alto que eu. Já sei."
+- "30 anos de forró — e a noite mais bonita ainda tá por vir."
+- "Garante o seu antes que eu me arrependa de ter deixado ingresso pra última hora 😂"
+        """)
+    with col_nao:
+        st.markdown("""
+**❌ NUNCA ESCREVER:**
+- "Que noite mágica e inesquecível!"
+- "Gratidão pela energia incrível do público!"
+- "Uma experiência única e transformadora"
+- Copy com: "jornada", "impacto", "resultado", "entrega"
+- Qualquer coisa que pareça release de assessoria de imprensa
+        """)
+
+    st.markdown("---")
+    st.markdown("### 🎯 Hashtags Oficiais")
+    st.code("#CalypSoul #JoelmaEmCuiabá #Joelma #MatoGrosso #Cuiabá #ForróBrasileiro #Show5Set #CoracaoDoBrasil #JoelmaBoiadeira #BandaCalypso", language=None)
 
 # ─────────────────────────────────────────────────────────
 # RODAPÉ
