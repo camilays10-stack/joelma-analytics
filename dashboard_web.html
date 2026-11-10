@@ -395,7 +395,7 @@ footer{
     <div class="hm col-sp">
       <div class="plat">🟣 Spotify</div>
       <div class="val" id="j-sp">—</div>
-      <div class="sub">ouvintes mensais</div>
+      <div class="sub">seguidores</div>
     </div>
     <div class="hm col-dz">
       <div class="plat">🎵 Deezer</div>
@@ -427,7 +427,7 @@ footer{
     <thead>
       <tr>
         <th style="text-align:left;min-width:180px">Artista</th>
-        <th style="color:#4ade80;min-width:120px">🟣 Spotify<br><small style="font-weight:500">Ouv/mês</small></th>
+        <th style="color:#4ade80;min-width:120px">🟣 Spotify<br><small style="font-weight:500">Seguidores</small></th>
         <th style="color:#f87171;min-width:110px">🎵 Deezer<br><small style="font-weight:500">Fãs</small></th>
         <th style="color:#fb923c;min-width:110px">▶️ YouTube<br><small style="font-weight:500">Inscritos</small></th>
         <th style="color:#f472b6;min-width:120px">📸 Instagram<br><small style="font-weight:500">Seguidores</small></th>
@@ -447,7 +447,7 @@ footer{
 <div class="sec">📊 Visualização por Plataforma</div>
 <div class="cg5">
   <div class="cc">
-    <h3 style="color:var(--sp)">🟣 Spotify — Ouvintes/mês</h3>
+    <h3 style="color:var(--sp)">🟣 Spotify — Seguidores</h3>
     <div class="ch"><canvas id="c-sp"></canvas></div>
   </div>
   <div class="cc">
@@ -519,7 +519,7 @@ footer{
     <thead>
       <tr>
         <th style="text-align:left;min-width:180px">Artista</th>
-        <th style="color:#4ade80">🟣 Spotify<br><small>Ouv/mês</small></th>
+        <th style="color:#4ade80">🟣 Spotify<br><small>Seguidores</small></th>
         <th style="color:#f87171">🎵 Deezer<br><small>Fãs</small></th>
         <th style="color:#f472b6">📸 Instagram</th>
         <th style="color:#00cfff">🎵 TikTok</th>
@@ -596,16 +596,17 @@ const GENEROS = {
   '🎵 Viviane Batidão':'Tecnomelody', '⭐ Zaynara':'Beat Melody',
 };
 
-// dados base — atualizado em 04/ago/2026
-// Instagram: fetch direto nos perfis oficiais + busca web
+// dados base — atualizado em 10/nov/2026 (fallback só se historico_metricas.json falhar)
+// Spotify: seguidores via API oficial (monthly listeners não é mais raspável)
+// Instagram Joelma: número real via Meta Graph API oficial
 const BASE = {
-  '🎤 JOELMA':          {spotify:713506,   deezer:197179,  youtube:1803017,  instagram:6000000,  tiktok:2900000},
+  '🎤 JOELMA':          {spotify:713506,   deezer:197179,  youtube:1803017,  instagram:6184444,  tiktok:2900000},
   '🤠 Wesley Safadão':  {spotify:9813112,  deezer:5000137, youtube:14767512, instagram:39800000, tiktok:6200000},
   '👑 Simone Mendes':   {spotify:12720687, deezer:1058268, youtube:6340000,  instagram:40597248, tiktok:17600000},
   '✈️  Xand Avião':     {spotify:7198010,  deezer:2331912, youtube:6003468,  instagram:10000000, tiktok:1200000},
   '☀️  Solange Almeida':{spotify:1507526,  deezer:539037,  youtube:1486188,  instagram:8300000,  tiktok:1800000},
-  '🌾 Ana Castela':     {spotify:12647334, deezer:1374210, youtube:5010044,  instagram:24000000, tiktok:16700000},
-  '🎶 Manu Bahtidão':   {spotify:3279663,  deezer:178477,  youtube:3139207,  instagram:5400000,  tiktok:3500000},
+  '🌾 Ana Castela':     {spotify:12647334, deezer:1374210, youtube:5010044,  instagram:25300000, tiktok:16700000},
+  '🎶 Manu Bahtidão':   {spotify:3279663,  deezer:178477,  youtube:3139207,  instagram:5446115,  tiktok:3500000},
   '🌺 Fafá de Belém':   {spotify:1156551,  deezer:66118,   youtube:220000,   instagram:1272876,  tiktok:0},
   '💎 Gaby Amarantos':  {spotify:448607,   deezer:180050,  youtube:177887,   instagram:1100000,  tiktok:294900},
   '🎵 Viviane Batidão': {spotify:388662,   deezer:25199,   youtube:158000,   instagram:1100000,  tiktok:464100},
@@ -956,7 +957,7 @@ function renderAnalise(ult){
      corpo:`Com <strong>${fmtE(j.deezer)} fãs</strong> no Deezer, Joelma está na ${pos.deezer}ª posição entre os 11 artistas.
      Wesley Safadão lidera com ${fmtE(BASE['🤠 Wesley Safadão'].deezer)} fãs.`},
     {icon:'🔴', cor:'#ff5252', titulo:'Spotify — Gap Crítico ('+pos.spotify+'ª)',
-     corpo:`<strong>${fmtE(j.spotify)} ouvintes/mês</strong> — na ${pos.spotify}ª posição.
+     corpo:`<strong>${fmtE(j.spotify)} seguidores</strong> — na ${pos.spotify}ª posição.
      Simone Mendes lidera com <strong>${fmtE(BASE['👑 Simone Mendes'].spotify)}</strong>.
      Recuperar esse gap é a prioridade #1 do streaming.`},
     {icon:'⭐', cor:'#f5c518', titulo:'Rainha das Paraenses',

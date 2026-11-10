@@ -7,7 +7,7 @@
 ╚══════════════════════════════════════════════════════════════╝
 """
 
-import sys, json, re, time, argparse
+import sys, os, json, re, time, argparse
 from datetime import datetime
 from pathlib import Path
 
@@ -100,7 +100,7 @@ ARTISTAS = [
         },
         "base": {
             "spotify": 1_507_526, "deezer": 537_544,
-            "youtube": 1_486_188, "instagram": 9_129_987, "tiktok": 1_700_000,
+            "youtube": 1_486_188, "instagram": 8_300_000, "tiktok": 1_700_000,
         },
     },
     {
@@ -114,7 +114,7 @@ ARTISTAS = [
         },
         "base": {
             "spotify": 12_647_334, "deezer": 1_338_072,
-            "youtube": 5_010_044, "instagram": 23_600_000, "tiktok": 16_700_000,
+            "youtube": 5_010_044, "instagram": 25_300_000, "tiktok": 16_700_000,
         },
     },
     # ── CANTORAS PARAENSES ────────────────────────────────────
@@ -129,7 +129,7 @@ ARTISTAS = [
         },
         "base": {
             "spotify": 3_279_663, "deezer": 177_258,
-            "youtube": 3_139_207, "instagram": 5_000_000, "tiktok": 3_500_000,
+            "youtube": 3_139_207, "instagram": 5_446_115, "tiktok": 3_500_000,
         },
     },
     {
@@ -218,28 +218,39 @@ SESSION = _sessao()
 # ═══════════════════════════════════════════════════════════════
 
 # ── SPOTIFY ──────────────────────────────────────────────────
-def coletar_spotify(artist_id):
-    if not artist_id: return None, False
+# A Spotify bloqueia (403 Akamai) o endpoint interno que expunha
+# "monthly listeners" via scraping — não há mais forma pública de
+# raspar esse número. Usamos a API oficial (Client Credentials) e
+# reportamos "seguidores" (followers), que é o dado real e estável
+# que a API expõe (/v1/artists/{id}).
+_SPOTIFY_TOKEN = None
+
+def obter_token_spotify(client_id, client_secret):
+    global _SPOTIFY_TOKEN
+    if _SPOTIFY_TOKEN: return _SPOTIFY_TOKEN
+    if not (client_id and client_secret): return None
     try:
-        r = SESSION.get(
-            f"https://open.spotify.com/artist/{artist_id}",
-            headers={"Accept": "text/html"}, timeout=12)
-        if r.status_code != 200: return None, False
-        html = r.text
-        m = re.search(r'([\d,]+)\s+monthly\s+listeners', html, re.I)
-        if m:
-            n = int(m.group(1).replace(",", ""))
-            if n > 1000: return n, True
-        m = re.search(r'([\d.]+)\s+ouvintes\s+mensais', html, re.I)
-        if m:
-            n = int(m.group(1).replace(".", ""))
-            if n > 1000: return n, True
-        for k in ["monthlyListeners", "monthly_listeners"]:
-            m = re.search(rf'"{k}"\s*:\s*(\d+)', html)
-            if m:
-                n = int(m.group(1))
-                if n > 1000: return n, True
-    except Exception: pass
+        r = requests.post(
+            "https://accounts.spotify.com/api/token",
+            data={"grant_type": "client_credentials"},
+            auth=(client_id, client_secret), timeout=12)
+        r.raise_for_status()
+        _SPOTIFY_TOKEN = r.json().get("access_token")
+    except Exception:
+        _SPOTIFY_TOKEN = None
+    return _SPOTIFY_TOKEN
+
+def coletar_spotify(artist_id, token=None):
+    if not artist_id: return None, False
+    if token:
+        try:
+            r = SESSION.get(
+                f"https://api.spotify.com/v1/artists/{artist_id}",
+                headers={"Authorization": f"Bearer {token}"}, timeout=12)
+            if r.status_code == 200:
+                n = r.json().get("followers", {}).get("total")
+                if n and int(n) > 0: return int(n), True
+        except Exception: pass
     return None, False
 
 # ── DEEZER (API pública, sem auth) ────────────────────────────
@@ -330,11 +341,11 @@ def coletar_tiktok(handles):
 #  COLETA COMPLETA
 # ═══════════════════════════════════════════════════════════════
 
-def coletar_artista(art):
+def coletar_artista(art, spotify_token=None):
     ids = art["ids"]
     base = art["base"]
 
-    sp_v, sp_l = coletar_spotify(ids["spotify"])
+    sp_v, sp_l = coletar_spotify(ids["spotify"], spotify_token)
     dz_v, dz_l = coletar_deezer(ids["deezer"])
     yt_v, yt_l = coletar_youtube(ids["youtube"])
     ig_v, ig_l = coletar_instagram(ids["instagram"])
@@ -572,6 +583,11 @@ def main():
         artistas = [a for a in ARTISTAS
                     if args.artista.lower() in a["nome"].lower()]
 
+    spotify_token = obter_token_spotify(
+        os.environ.get("SPOTIFY_CLIENT_ID"),
+        os.environ.get("SPOTIFY_CLIENT_SECRET"),
+    )
+
     if RICH:
         console.print(Panel.fit(
             "[bold yellow]🎤  JOELMA DIGITAL STRATEGY — v3.0[/bold yellow]\n"
@@ -586,7 +602,7 @@ def main():
                 console.print(f"[dim]→ {art['nome']}...[/dim]")
             else:
                 print(f"→ {art['nome']}...")
-        resultados.append(coletar_artista(art))
+        resultados.append(coletar_artista(art, spotify_token))
         time.sleep(0.6)
 
     if not args.json_only:
