@@ -228,15 +228,22 @@ _SPOTIFY_TOKEN = None
 def obter_token_spotify(client_id, client_secret):
     global _SPOTIFY_TOKEN
     if _SPOTIFY_TOKEN: return _SPOTIFY_TOKEN
-    if not (client_id and client_secret): return None
+    if not (client_id and client_secret):
+        print("⚠️  Spotify: SPOTIFY_CLIENT_ID/SECRET não configurados — usando base.", file=sys.stderr)
+        return None
     try:
         r = requests.post(
             "https://accounts.spotify.com/api/token",
             data={"grant_type": "client_credentials"},
             auth=(client_id, client_secret), timeout=12)
-        r.raise_for_status()
+        if r.status_code != 200:
+            print(f"⚠️  Spotify token HTTP {r.status_code}: {r.text[:200]}", file=sys.stderr)
+            return None
         _SPOTIFY_TOKEN = r.json().get("access_token")
-    except Exception:
+        if not _SPOTIFY_TOKEN:
+            print(f"⚠️  Spotify token: resposta sem access_token: {r.text[:200]}", file=sys.stderr)
+    except Exception as e:
+        print(f"⚠️  Spotify token erro: {e}", file=sys.stderr)
         _SPOTIFY_TOKEN = None
     return _SPOTIFY_TOKEN
 
@@ -250,7 +257,11 @@ def coletar_spotify(artist_id, token=None):
             if r.status_code == 200:
                 n = r.json().get("followers", {}).get("total")
                 if n and int(n) > 0: return int(n), True
-        except Exception: pass
+                print(f"⚠️  Spotify {artist_id}: resposta sem followers válido: {r.text[:150]}", file=sys.stderr)
+            else:
+                print(f"⚠️  Spotify {artist_id}: HTTP {r.status_code}: {r.text[:150]}", file=sys.stderr)
+        except Exception as e:
+            print(f"⚠️  Spotify {artist_id} erro: {e}", file=sys.stderr)
     return None, False
 
 # ── DEEZER (API pública, sem auth) ────────────────────────────
