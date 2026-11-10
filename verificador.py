@@ -352,9 +352,20 @@ def coletar_tiktok(handles):
 #  COLETA COMPLETA
 # ═══════════════════════════════════════════════════════════════
 
-def coletar_artista(art, spotify_token=None):
+def coletar_artista(art, spotify_token=None, anterior=None):
+    """
+    anterior: dict com os últimos valores conhecidos (hist[-1]['dados'][nome]),
+    ou None. Quando uma coleta ao vivo falha, usamos o último valor REAL
+    conhecido (anterior) em vez da constante "base" congelada — assim o
+    número nunca regride para um valor antigo só porque uma coleta falhou.
+    """
     ids = art["ids"]
     base = art["base"]
+    anterior = anterior or {}
+
+    def _fallback(plat):
+        v = anterior.get(plat)
+        return v if v else base[plat]
 
     sp_v, sp_l = coletar_spotify(ids["spotify"], spotify_token)
     dz_v, dz_l = coletar_deezer(ids["deezer"])
@@ -366,11 +377,11 @@ def coletar_artista(art, spotify_token=None):
         "nome":     art["nome"],
         "destaque": art["destaque"],
         "grupo":    art.get("grupo", ""),
-        "spotify":   {"val": sp_v or base["spotify"],  "live": sp_l},
-        "deezer":    {"val": dz_v if dz_l else base["deezer"], "live": dz_l},
-        "youtube":   {"val": yt_v or base["youtube"],  "live": yt_l},
-        "instagram": {"val": ig_v or base["instagram"],"live": ig_l},
-        "tiktok":    {"val": tt_v or base["tiktok"],   "live": tt_l, "handle": tt_h},
+        "spotify":   {"val": sp_v if sp_l else _fallback("spotify"),   "live": sp_l},
+        "deezer":    {"val": dz_v if dz_l else _fallback("deezer"),    "live": dz_l},
+        "youtube":   {"val": yt_v if yt_l else _fallback("youtube"),   "live": yt_l},
+        "instagram": {"val": ig_v if ig_l else _fallback("instagram"), "live": ig_l},
+        "tiktok":    {"val": tt_v if tt_l else _fallback("tiktok"),    "live": tt_l, "handle": tt_h},
         "ts": datetime.now().isoformat(),
     }
 
@@ -599,6 +610,15 @@ def main():
         os.environ.get("SPOTIFY_CLIENT_SECRET"),
     )
 
+    ultimo_hist = {}
+    if HISTORICO_FILE.exists():
+        try:
+            hist_existente = json.loads(HISTORICO_FILE.read_text(encoding="utf-8"))
+            if hist_existente:
+                ultimo_hist = hist_existente[-1].get("dados", {})
+        except Exception:
+            pass
+
     if RICH:
         console.print(Panel.fit(
             "[bold yellow]🎤  JOELMA DIGITAL STRATEGY — v3.0[/bold yellow]\n"
@@ -613,7 +633,7 @@ def main():
                 console.print(f"[dim]→ {art['nome']}...[/dim]")
             else:
                 print(f"→ {art['nome']}...")
-        resultados.append(coletar_artista(art, spotify_token))
+        resultados.append(coletar_artista(art, spotify_token, ultimo_hist.get(art["nome"])))
         time.sleep(0.6)
 
     if not args.json_only:
