@@ -44,7 +44,7 @@ ARTISTAS = [
         },
         "base": {
             "spotify": 713_506, "deezer": 196_375,
-            "youtube": 1_803_017, "instagram": 5_864_066, "tiktok": 2_900_000,
+            "youtube": 1_803_017, "instagram": 6_184_444, "tiktok": 2_900_000,
         },
     },
     {
